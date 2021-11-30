@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import Section1Elements from "./Section1Elements";
 
-import backgroundSection1 from '../../../public/backgroudSection1.svg'
+import backgroundSection1 from '../../../public/backgroundSection1.svg'
 
-import TitleOfPages from "../../styles/TitleOfPages";
-import TitleVerySmall from "../../styles/TitleVerySmall";
+import TitleOfPagesDark from "../../styles/TitleOfPagesDark";
+import TitleVerySmallGreen from "../../styles/TitleVerySmallGreen";
 
 const WrappSection1Background = styled.div`
   min-width: 375px;
@@ -17,7 +17,7 @@ const WrappSection1Background = styled.div`
   background-image: url(${backgroundSection1.src});
   background-repeat: no-repeat;
   background-size: auto 100%;
-  background-position: left top;
+  background-position: left 30px;
   display: flex;
   justify-content: center;
    @media (min-width: 992px) {
@@ -29,7 +29,7 @@ const WrappSection1 = styled.div`
   //margin: 0 auto;
   //border: chartreuse 2px solid;
   margin: 0px 40px 0 40px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -44,21 +44,16 @@ const WrappSection1 = styled.div`
   //    }
 `
 
-const TitleSection1VerySmall = styled(TitleVerySmall)`
+const TitleSection1VerySmall = styled(TitleVerySmallGreen)`
     `
 
-const TitleSection1 = styled(TitleOfPages)`
+const TitleSection1 = styled(TitleOfPagesDark)`
     max-width: 500px;
   padding-top: 30px;
   padding-bottom: 30px;
   //height: 300px;
   //border: brown 2px solid;
 `
-
-const BBBB = styled.div`
-height: 500px;
-  height: 300px;
-  // border: brown 2px solid;`
 
 const Section1 = () => {
 

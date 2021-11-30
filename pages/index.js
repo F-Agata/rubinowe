@@ -9,6 +9,7 @@ import GoToTopOfPage from "./components/GoToTopOfPage";
 import Header from "./components/header/Header";
 import Navigation from "./components/navigation/Navigation";
 import Section1 from "./components/section1/Section1";
+import Section2 from "./components/section2/Section2";
 
 
 const AppWrapp = styled.div`
@@ -33,9 +34,9 @@ export default function Home() {
           <Navigation/>
           <Header/>
           <Section1/>
-            <div>jestem pod headerem</div>
+          <Section2/>
 
-            <GoToTopOfPage/>
+          <GoToTopOfPage/>
         </AppWrapp>
       </ThemeProvider>
   );
