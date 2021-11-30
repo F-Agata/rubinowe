@@ -8,11 +8,13 @@ import GlobalStyle from "./styles/GlobalStyle";
 import GoToTopOfPage from "./components/GoToTopOfPage";
 import Header from "./components/header/Header";
 import Navigation from "./components/navigation/Navigation";
+import Section1 from "./components/section1/Section1";
 
 
 const AppWrapp = styled.div`
+  border: orange 2px solid;
   min-width: 375px;
-  max-width: 1440px;
+  max-width: 1800px;
   margin: 0 auto;
   text-align: left;
   min-height: 200vh;
@@ -30,6 +32,7 @@ export default function Home() {
         <AppWrapp>
           <Navigation/>
           <Header/>
+          <Section1/>
             <div>jestem pod headerem</div>
 
             <GoToTopOfPage/>

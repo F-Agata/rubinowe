@@ -11,23 +11,26 @@ const WrappHeaderBackground = styled.div`
   background-color: ${props => props.theme.colors.colorPrimary};;
   background-image: url(${backgroundHeader.src});
   background-repeat: no-repeat;
-  background-size: auto 80%;
-  background-position: center top;
+  background-size: auto 70%;
+  background-position: top center;
   min-width: 375px;
-  max-width: 1440px;
-  width: 100%;
-  @media (min-width: 700px) {
-    background-size: auto 70%;
+  max-width: 1800px;
+  //border: red solid 2px;
+  //margin: -250px 0px 0px 0px ;
+  //width: 100%;
+  @media (min-width: 1500px) {
+    background-size: 100% auto;
   }  
   `
 
 const WrappHeader = styled.div`
-  margin: 0px 40px 0 40px;
+  //margin: 0px 40px 0 40px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 140px;
+  //max-width: 900px ;
   //border: green solid 2px;
   //@media (min-width: 992px) {
   //  flex-direction: row-reverse;
@@ -43,6 +46,7 @@ const TitleHeader = styled.h1 `
   font-size: 68px;
   line-height: 120%;
   text-align: center;
+  //padding-top: 250px;
 `
 
 const TextHeader = styled(TextBigWhite)`
@@ -58,7 +62,7 @@ const WrappImgHeader = styled.div`
     @media (min-width: 992px) {
     margin-left: 40px;
     margin-right: 40px;
-    max-width: 900px ;
+    max-width: 1170px ;
   }
 `
 

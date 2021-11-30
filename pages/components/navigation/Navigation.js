@@ -35,7 +35,7 @@ const WrappNavigation = styled.div`
   height: 62px;
   align-self: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1800px;
   display: flex;
   align-items: center;
   justify-content: space-between;

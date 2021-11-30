@@ -4,6 +4,7 @@ export default {
         colorSecondary: '#57B3FE',
         colorText: '#595E64',
         colorTitle: '#3B3E43',
+        colorTitleVerySmall: '#00A077',
         colorBlue: "#35D3FF",
         colorViolet: "#A963FB",
         colorGray: '#ECF0F3',
@@ -39,7 +40,9 @@ export default {
     fontSizes: {
         fsTitleBig: '48px',
         fsTitleSmall: '22px',
+        fsTitleVerySmall: '12px',
         fsTextBig: '20px',
         fsTextSmall: '16px',
+
            },
   }

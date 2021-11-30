@@ -10,29 +10,25 @@ const NavigationWrapp = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(50px);
   z-index: 999;`
 
 const NavigationListWrapp = styled.div`
-  background: ${props => props.theme.gradients.gradientVioletToBlue};
+  background-color: ${props => props.theme.colors.colorPrimary};
   box-shadow: ${props => props.theme.shadows.shadowWhite};
   position: absolute;
-  top: 30px;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, 0);
-  height: 400px;
   width: 300px;
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-right: 30px;
-`
+    `
 
 const TopMenu = styled.div`
+  background: ${props => props.theme.gradients.gradientVioletToBlue};
   border-bottom: 1px solid ${props => props.theme.colors.colorBorder};
-  margin: 10px 0 30px 0;
-  padding-bottom: 30px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center`
@@ -49,9 +45,8 @@ const WrapIcon = styled.div`
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  //box-shadow: ${props => props.theme.shadows.shadowWhite};
-  background: ${props => props.theme.gradients.gradientBox};
-  border: 1px solid ${props => props.theme.colors.colorSecondary};
+  background: ${props => props.theme.colors.colorPrimary};
+  //border: 1px solid ${props => props.theme.colors.colorSecondary};
   //border: gold 2px solid;
   display: flex;
   justify-content: center;
@@ -66,32 +61,32 @@ const ToggleMenuButton = styled.button`
 
 const NavigationNav = styled.nav`
    //border: aquamarine 2px solid;
-   flex-grow: 1; 
-   text-align: left`
+   text-align: center;
+  margin: 20px 0;
+`
 
 const NavigationUl = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  height: 60px;`
-//border: red 2px solid`
+ //border: red 2px solid
+`
 
 const NavigationLi = styled.li`
   list-style: none;
   cursor: pointer;
-  line-height: 60px;
+  line-height: 80px;
   transition: 0.3s;
+  //border: orange 2px solid;
+  width: 100%;
   :hover a {
-    color:  ${props => props.theme.colors.colorPrimary};
+    color:  ${props => props.theme.colors.colorSecondary};
   }`
 
 const NavigationLink = styled.a`
   text-decoration: none;
-  height: 60px;
-  color: ${props => props.theme.colors.colorText};
-  text-transform: uppercase;
-  color: ${props => props.theme.colors.colorPrimary};
+  height: 80px;
+  color: ${props => props.theme.colors.colorTitle};
   font-size: ${props => props.theme.fontSizes.fsTextSmall};
   font-weight: ${props => props.theme.fonts.fontMedium};
   line-height: 100%;
@@ -100,10 +95,10 @@ const NavigationLink = styled.a`
   transition: 0.3s;`
 
 const BottomMenu = styled.div`
-  margin: 30px 0px 40px 0px;
-  text-align: left;
-  
-  //border: yellow 2px solid;
+  background: ${props => props.theme.gradients.gradientVioletToBlue};
+  width: 100%;
+  height: 20px;
+   //border: yellow 2px solid;
 `
 
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
@@ -132,9 +127,8 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                         {menuItem}
                     </NavigationUl>
                 </NavigationNav>
-                {/*<BottomMenu>*/}
-                {/*    <div>tutaj byly ikonki social</div>*/}
-                {/*</BottomMenu>*/}
+                <BottomMenu>
+                </BottomMenu>
             </NavigationListWrapp>
         </NavigationWrapp>
     )
