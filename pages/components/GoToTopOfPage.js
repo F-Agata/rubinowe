@@ -54,7 +54,7 @@ const GoToTopOfPage = () => {
 
     const toggleArrow = () => {
         setScrollY(window.pageYOffset)
-        if (scrollY > 120) {
+        if (scrollY > 100) {
             setShowArrow(true)
         } else  setShowArrow(false);
        }

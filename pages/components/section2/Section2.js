@@ -8,7 +8,7 @@ import TextBigWhite from "../../styles/TextBigWhite";
 
 
 
-const WrappSection2Background = styled.div`
+const WrappSection2Background = styled.section`
   min-width: 375px;
   max-width: 1800px;
   width: 100%;

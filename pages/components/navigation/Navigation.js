@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive'
 
 import NavigationListSmall from './NavigationListSmall'
 import NavigationListBig from './NavigationListBig'
-import Btn from "../../styles/Btn";
 
 import logoWhite from '../../../public/logoWhite.svg'
 import iconClosedWhite from '../../../public/iconHamburgerMenuClosedWhite.svg'
@@ -100,7 +99,7 @@ const Navigation = () => {
 
     const moveScroll = () => {
         setScrollY(window.pageYOffset)
-        if (scrollY > 120) {
+        if (scrollY > 100) {
             setAddShadow(true)
         } else setAddShadow(false);
 

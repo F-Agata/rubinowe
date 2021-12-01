@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
 
+const Foo = styled.footer`
+height: 100px;
+width: 100%;
+background-color: black`
+
 const Footer = () => {
 
     return (
-        <div>jestem footer</div>
+        <Foo>jestem footer</Foo>
         // <WrappSection2Background>
         //     <WrappSection2>
         //         <TitleSection2VerySmall>Bardzo maly bialy tytul</TitleSection2VerySmall>

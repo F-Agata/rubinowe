@@ -16,7 +16,7 @@ import Footer from "./components/footer/Footer";
 
 
 const AppWrapp = styled.div`
-  border: orange 2px solid;
+  //border: orange 2px solid;
   min-width: 375px;
   max-width: 1800px;
   margin: 0 auto;

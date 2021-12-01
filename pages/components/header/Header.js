@@ -7,7 +7,7 @@ import imgHeader from '../../../public/Group 27013.png'
 import TextBigWhite from "../../styles/TextBigWhite";
 import Btn from "../../styles/Btn";
 
-const WrappHeaderBackground = styled.div`
+const WrappHeaderBackground = styled.header`
   background-color: ${props => props.theme.colors.colorPrimary};;
   background-image: url(${backgroundHeader.src});
   background-repeat: no-repeat;
@@ -16,8 +16,6 @@ const WrappHeaderBackground = styled.div`
   min-width: 375px;
   max-width: 1800px;
   //border: red solid 2px;
-  //margin: -250px 0px 0px 0px ;
-  //width: 100%;
   @media (min-width: 1500px) {
     background-size: 100% auto;
   }  
@@ -30,13 +28,7 @@ const WrappHeader = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 140px;
-  //max-width: 900px ;
   //border: green solid 2px;
-  //@media (min-width: 992px) {
-  //  flex-direction: row-reverse;
-  //  justify-content: space-between;
-  //  align-items: center;
-  //    }
 `
 
 const TitleHeader = styled.h1 `
@@ -46,8 +38,7 @@ const TitleHeader = styled.h1 `
   font-size: 68px;
   line-height: 120%;
   text-align: center;
-  //padding-top: 250px;
-`
+  `
 
 const TextHeader = styled(TextBigWhite)`
     margin: 10px 0px 30px 0px;
@@ -58,7 +49,6 @@ const WrappImgHeader = styled.div`
   margin-left: 10px;
   margin-right: 10px;
   padding-top: 40px;
-  
     @media (min-width: 992px) {
     margin-left: 40px;
     margin-right: 40px;
@@ -67,14 +57,12 @@ const WrappImgHeader = styled.div`
 `
 
 const ImgHeader = styled.img`
-width: 100%;
+  width: 100%;
   //border: green solid 2px;
 `
 
 
 const Header = () => {
-
-    // useEffect(()=>{console.log(logo)},[])
 
     return (
         <WrappHeaderBackground>

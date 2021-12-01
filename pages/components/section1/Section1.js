@@ -8,7 +8,7 @@ import backgroundSection1 from '../../../public/backgroundSection1.svg'
 import TitleOfPagesDark from "../../styles/TitleOfPagesDark";
 import TitleVerySmallGreen from "../../styles/TitleVerySmallGreen";
 
-const WrappSection1Background = styled.div`
+const WrappSection1Background = styled.section`
   min-width: 375px;
   max-width: 1800px;
   width: 100%;
