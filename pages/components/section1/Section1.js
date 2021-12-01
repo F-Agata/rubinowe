@@ -35,23 +35,15 @@ const WrappSection1 = styled.div`
   align-items: start;
   //padding-top: 40px;
   max-width: 1170px;
-  //transform: rotate(-270deg);
-  //border: green solid 2px;
-  //@media (min-width: 992px) {
-  //  flex-direction: row-reverse;
-  //  justify-content: space-between;
-  //  align-items: center;
-  //    }
 `
 
 const TitleSection1VerySmall = styled(TitleVerySmallGreen)`
     `
 
 const TitleSection1 = styled(TitleOfPagesDark)`
-    max-width: 500px;
+  max-width: 500px;
   padding-top: 30px;
   padding-bottom: 30px;
-  //height: 300px;
   //border: brown 2px solid;
 `
 

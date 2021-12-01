@@ -70,7 +70,7 @@ const NavigationMainListBig = ({ menuItems }) => {
                     {menuItem}
                 </NavigationUl>
             </NavigatioNav>
-            <BtnNavigation>kup teraz</BtnNavigation>
+            <BtnNavigation>kup teraz 2</BtnNavigation>
         </NavigationWrapp>
     )
 }

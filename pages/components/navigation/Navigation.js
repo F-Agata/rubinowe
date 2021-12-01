@@ -115,14 +115,8 @@ const Navigation = () => {
         resetMenu();
     }, [modificationMenuSize]);
 
-    const WrappNavigationShadow = styled(NavigationBasicStyle)`
-      ${({theme})=>`
-        background: ${addShadow ? theme.colors.colorPrimary : 'transparent'};
-        box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
-       `};
-    `
     return (
-        <WrappNavigationShadow>
+        <WrappNavigationShadow addShadow={addShadow}>
             <WrappNavigation>
                 <WrappLogo>
                     <Logo src={logoWhite.src} alt={"logo"}/>
@@ -144,5 +138,12 @@ const Navigation = () => {
         </WrappNavigationShadow>
     )
 }
+
+const WrappNavigationShadow = styled(NavigationBasicStyle)`
+  ${({theme, addShadow})=>`
+    background: ${addShadow ? theme.colors.colorPrimary : 'transparent'};
+    box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
+   `};
+`
 
 export default Navigation;

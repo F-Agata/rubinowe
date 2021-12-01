@@ -19,6 +19,8 @@ const WrappSection2Background = styled.div`
   background-size: cover;
   background-position: left top;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   `
 
