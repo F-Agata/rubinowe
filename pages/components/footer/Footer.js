@@ -1,25 +1,33 @@
 import React from 'react'
 import styled from 'styled-components';
+import Form from "../form/Form";
 
-const Foo = styled.footer`
-height: 100px;
+const WrappFooter = styled.footer`
 width: 100%;
-background-color: black`
+background-color: black;
+display: flex;
+flex-wrap: wrap;
+  border: yellow 2px solid;
+  `
+
+const FooterInfo = styled.div`
+    border: #0070f3 2px solid;
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+`
 
 const Footer = () => {
 
     return (
-        <Foo>jestem footer</Foo>
-        // <WrappSection2Background>
-        //     <WrappSection2>
-        //         <TitleSection2VerySmall>Bardzo maly bialy tytul</TitleSection2VerySmall>
-        //         <TitleSection2>Cześć, jestem tytułem sekcji drugiej</TitleSection2>
-        //         <TextSection2>Minister zdrowia Adam Niedzielski był we wtorek gościem "Rozmowy Piaseckiego" w TVN24. Odpowiadał na pytania o wprowadzone przez rząd dodatkowe obostrzenia i rozprzestrzeniający się na świecie wariant koronawirusa omikron. Rozmowę relacjonowaliśmy na żywo w tvn24.pl.</TextSection2>
-        //     </WrappSection2>
-        //
-        // </WrappSection2Background>
-
-    )
+        <WrappFooter>
+            <FooterInfo>
+                <div>info w footerze</div>
+            </FooterInfo>
+            <Form/>
+        </WrappFooter>
+                  )
 }
 
 export default Footer
