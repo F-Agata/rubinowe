@@ -1,22 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-import Form from "../form/Form";
+
 
 const WrappFooter = styled.footer`
 width: 100%;
+  min-height: 100px;
 background-color: black;
-display: flex;
-flex-wrap: wrap;
-  border: yellow 2px solid;
+  text-align: center;
+
   `
 
 const FooterInfo = styled.div`
-    border: #0070f3 2px solid;
-  width: 100%;
-  @media (min-width: 992px) {
-    width: 50%;
-  }
-`
+     width: 100%;
+ `
 
 const Footer = () => {
 
@@ -25,7 +21,6 @@ const Footer = () => {
             <FooterInfo>
                 <div>info w footerze</div>
             </FooterInfo>
-            <Form/>
         </WrappFooter>
                   )
 }

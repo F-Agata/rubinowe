@@ -7,9 +7,26 @@ import validationRules from "./validationRules";
 import Btn from "../../styles/Btn";
 
 const WrappPanelForm = styled.div`
-   
+
+  min-width: 375px;
+  max-width: 1800px;
+  width: 100%;
+  //border: orange 2px solid;
+  background-color: #F9F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 `
 const WrappPanel = styled.form`
+  //border: chartreuse 2px solid;
+  margin: 0px 40px 0 40px;
+  padding: 190px 0px 190px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1170px;
 `
 const FormTitle = styled.h1`
 `
@@ -92,7 +109,6 @@ function FormPanel() {
                 </WrappOnePartOfForm>
 
                 <BtnF type={"submit"}> Wyślij</BtnF>
-
             </WrappPanel>
         </WrappPanelForm>
     );
