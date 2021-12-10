@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 import Section1Elements from "./Section1Elements";
 
-import backgroundSection1 from '../../public/backgroundSection1.svg'
+import backgroundSection1 from "../../public/backgroundSection1.svg";
 
 import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
 import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
@@ -13,17 +13,17 @@ const WrappSection1Background = styled.section`
   max-width: 1800px;
   width: 100%;
   //border: orange 2px solid;
-  background-color: ${props => props.theme.colors.colorPrimary};
+  background-color: ${(props) => props.theme.colors.colorPrimary};
   background-image: url(${backgroundSection1.src});
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: left 30px;
   display: flex;
   justify-content: center;
-   @media (min-width: 992px) {
-     background-size: 100% ;
-   }
-  `
+  @media (min-width: 992px) {
+    background-size: 100%;
+  }
+`;
 
 const WrappSection1 = styled.div`
   //margin: 0 auto;
@@ -35,31 +35,27 @@ const WrappSection1 = styled.div`
   align-items: start;
   //padding-top: 40px;
   max-width: 1170px;
-`
+`;
 
-const TitleSection1VerySmall = styled(TitleVerySmallGreen)`
-    `
+const TitleSection1VerySmall = styled(TitleVerySmallGreen)``;
 
 const TitleSection1 = styled(TitleOfPagesDark)`
   max-width: 500px;
   padding-top: 30px;
   padding-bottom: 30px;
   //border: brown 2px solid;
-`
+`;
 
 const Section1 = () => {
+  return (
+    <WrappSection1Background>
+      <WrappSection1>
+        <TitleSection1VerySmall>Bardzo malutki tytulik</TitleSection1VerySmall>
+        <TitleSection1>Cześć, jestem tytułem sekcji pierwszej</TitleSection1>
+        <Section1Elements />
+      </WrappSection1>
+    </WrappSection1Background>
+  );
+};
 
-    return (
-        <WrappSection1Background>
-            <WrappSection1>
-                <TitleSection1VerySmall>Bardzo malutki tytulik</TitleSection1VerySmall>
-                <TitleSection1>Cześć, jestem tytułem sekcji pierwszej</TitleSection1>
-                <Section1Elements/>
-            </WrappSection1>
-
-        </WrappSection1Background>
-
-    )
-}
-
-export default Section1
+export default Section1;

@@ -1,15 +1,10 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import FormPanel from "./FormPanel";
 
-
-
 const Form = () => {
+  return <FormPanel />;
+};
 
-    return (
-            <FormPanel/>
-    )
-}
-
-export default Form
+export default Form;

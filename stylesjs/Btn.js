@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 const Btn = styled.button`
-  height: 61px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;

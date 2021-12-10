@@ -1,22 +1,20 @@
-import React, {useState, useEffect } from 'react'
-import styled, { css } from 'styled-components';
-import { useMediaQuery } from 'react-responsive'
+import React, { useState, useEffect } from "react";
+import styled, { css } from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
-import NavigationListSmall from './NavigationListSmall'
-import NavigationListBig from './NavigationListBig'
+import NavigationListSmall from "./NavigationListSmall";
+import NavigationListBig from "./NavigationListBig";
 
-import logo from '../../public/logo.svg'
-import iconClosedWhite from '../../public/iconHamburgerMenuClosedWhite.svg'
+import logo from "../../public/logo.svg";
+import iconClosedWhite from "../../public/iconHamburgerMenuClosedWhite.svg";
+import iconClosed from "../../public/iconHamburgerMenuClosed.svg";
 
 const menuItems = [
-    {name: "Hello",
-        id: "menu1",},
-    {name: "O mnie",
-        id: "menu2",},
-    {name: "Projekty",
-        id: "menu3",},
-    {name: "Kontakt",
-        id: "menu4",}]
+  { name: "Hello", id: "menu1" },
+  { name: "O mnie", id: "menu2" },
+  { name: "Projekty", id: "menu3" },
+  { name: "Kontakt", id: "menu4" },
+];
 
 const NavigationBasicStyle = styled.aside`
   height: 62px;
@@ -27,8 +25,22 @@ const NavigationBasicStyle = styled.aside`
   display: flex;
   justify-content: center;
   z-index: 10;
-  //border: 2px solid chartreuse;  
-`
+  border: 2px solid chartreuse;
+`;
+
+const WrappNavigationShadow = styled(NavigationBasicStyle)`
+  ${({ theme, addShadow }) => `
+    background: ${addShadow ? theme.colors.colorSmallMenu : "transparent"};
+    box-shadow: ${addShadow ? theme.shadows.shadowGrey : "none"};
+    ${
+      addShadow
+        ? css`
+            top: 0;
+          `
+        : null
+    }
+   `};
+`;
 
 const WrappNavigation = styled.div`
   height: 62px;
@@ -38,24 +50,26 @@ const WrappNavigation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //  @media (min-width: 992px) {
-  //  padding: 0px 60px
-  //}
-`
+  border: red 2px solid;
+`;
 
 const WrappLogo = styled.div`
-  ${({ addShadow })=>`
-    ${ addShadow ? css`
-      img {
-          margin-top: -15px;
-          height: 60px;
-      }
-    ` : css`
-      img {
-        margin-top: -20px;
-        height: 80px;
-      }
-    `}
+  ${({ addShadow }) => `
+    ${
+      addShadow
+        ? css`
+            img {
+              margin-top: -15px;
+              height: 50px;
+            }
+          `
+        : css`
+            img {
+              margin-top: -20px;
+              height: 80px;
+            }
+          `
+    }
   `};
   height: 60px;
   margin-left: 30px;
@@ -63,10 +77,11 @@ const WrappLogo = styled.div`
   text-align: left;
   display: flex;
   align-items: center;
-  `
+`;
 
 const Logo = styled.img`
-  height: 100%;`
+  height: 100%;
+`;
 
 const WrapIcon = styled.div`
   height: 45px;
@@ -74,7 +89,7 @@ const WrapIcon = styled.div`
   margin-right: 30px;
   text-align: right;
   //border: gold 2px solid;
-  `
+`;
 const ToggleMenuButton = styled.button`
   height: 40px;
   width: 40px;
@@ -83,77 +98,77 @@ const ToggleMenuButton = styled.button`
   cursor: pointer;
   border: none;
   font-size: 32px;
-  color:  ${props => props.theme.colors.colorPrimary};
-`
+  color: ${(props) => props.theme.colors.colorPrimary};
+`;
 
 const Navigation = () => {
+  // useEffect(()=>{console.log(iconClosed)},[])
 
-    // useEffect(()=>{console.log(iconClosed)},[])
+  const [isOpen, setIsOpen] = useState(false);
+  const [iconMenu, setIconMenu] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [addShadow, setAddShadow] = useState(false);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [iconMenu, setIconMenu] = useState(false);
-    const [scrollY, setScrollY] = useState(0)
-    const [addShadow, setAddShadow] = useState(false)
+  const modificationMenuSize = useMediaQuery({ query: "(min-width: 992px)" });
 
-    const modificationMenuSize = useMediaQuery({query: '(min-width: 992px)' })
+  const changeMenu = () => {
+    setIsOpen(!isOpen);
+    setIconMenu(!iconMenu);
+  };
 
-    const changeMenu = () => {
-        setIsOpen (!isOpen);
-        setIconMenu (!iconMenu);
-    };
+  const resetMenu = () => {
+    setIsOpen(false);
+    setIconMenu(false);
+  };
 
-    const resetMenu = () => {
-        setIsOpen (false);
-        setIconMenu (false);
-    };
+  const moveScroll = () => {
+    setScrollY(window.pageYOffset);
+    if (scrollY > 100) {
+      setAddShadow(true);
+    } else setAddShadow(false);
+  };
 
-    const moveScroll = () => {
-        setScrollY(window.pageYOffset)
-        if (scrollY > 100) {
-            setAddShadow(true)
-        } else setAddShadow(false);
+  useEffect(() => {
+    window.addEventListener("scroll", moveScroll);
+    return () => window.removeEventListener("scroll", moveScroll);
+  }, [scrollY, addShadow]);
 
-    }
+  useEffect(() => {
+    resetMenu();
+  }, [modificationMenuSize]);
 
-    useEffect(() => {
-        window.addEventListener("scroll", moveScroll);
-        return () => window.removeEventListener("scroll", moveScroll);
-    }, [scrollY, addShadow]);
+  return (
+    <WrappNavigationShadow addShadow={addShadow}>
+      <WrappNavigation>
+        <WrappLogo addShadow={addShadow}>
+          <Logo src={logo.src} alt={"logo"} />
+        </WrappLogo>
 
-    useEffect(() => {
-        resetMenu();
-    }, [modificationMenuSize]);
+        {!modificationMenuSize && addShadow === true ? (
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              <img src={iconClosed.src} alt={"menu"} />
+            </ToggleMenuButton>
+          </WrapIcon>
+        ) : null}
 
-    return (
-        <WrappNavigationShadow addShadow={addShadow}>
-            <WrappNavigation>
-                <WrappLogo addShadow={addShadow}>
-                    <Logo src={logo.src} alt={"logo"}/>
-                </WrappLogo>
-                { modificationMenuSize ? null :
-                    <WrapIcon>
-                        <ToggleMenuButton onClick={changeMenu}>
-                            <img src={iconClosedWhite.src} alt={"menu"}/>
-                        </ToggleMenuButton>
-                    </WrapIcon>
-                }
-                { isOpen && !modificationMenuSize ?
-                    <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} /> : null}
-                {modificationMenuSize &&
-                <NavigationListBig menuItems={menuItems} addShadow={addShadow}/>
-                }
+        {!modificationMenuSize && addShadow === false ? (
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              <img src={iconClosedWhite.src} alt={"menu"} />
+            </ToggleMenuButton>
+          </WrapIcon>
+        ) : null}
 
-            </WrappNavigation>
-        </WrappNavigationShadow>
-    )
-}
-
-const WrappNavigationShadow = styled(NavigationBasicStyle)`
-  ${({theme, addShadow})=>`
-    background: ${addShadow ? theme.colors.colorSmallMenu : 'transparent'};
-    box-shadow: ${addShadow ? theme.shadows.shadowGrey : 'none'};
-    ${addShadow ? css`top: 0;` : null}
-   `};
-`
+        {isOpen && !modificationMenuSize ? (
+          <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} />
+        ) : null}
+        {modificationMenuSize && (
+          <NavigationListBig menuItems={menuItems} addShadow={addShadow} />
+        )}
+      </WrappNavigation>
+    </WrappNavigationShadow>
+  );
+};
 
 export default Navigation;
