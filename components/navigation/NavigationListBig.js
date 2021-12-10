@@ -68,7 +68,7 @@ const NavigationMainListBig = ({ menuItems, addShadow }) => {
                     {menuItem}
                 </NavigationUl>
             </NavigatioNav>
-            <Btn>kup teraz 2</Btn>
+            <Btn>skontaktuj się z nami</Btn>
         </NavigationWrapp>
     )
 }

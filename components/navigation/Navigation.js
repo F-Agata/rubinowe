@@ -38,9 +38,10 @@ const WrappNavigation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-    @media (min-width: 992px) {
-    padding: 0px 60px
-  }`
+  //  @media (min-width: 992px) {
+  //  padding: 0px 60px
+  //}
+`
 
 const WrappLogo = styled.div`
   ${({ addShadow })=>`
@@ -138,9 +139,9 @@ const Navigation = () => {
                 }
                 { isOpen && !modificationMenuSize ?
                     <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} /> : null}
-                {/*{ modificationMenuSize &&*/}
-                <NavigationListBig menuItems={menuItems} addShadow={addShadow} />
-                {/*}*/}
+                {modificationMenuSize &&
+                <NavigationListBig menuItems={menuItems} addShadow={addShadow}/>
+                }
 
             </WrappNavigation>
         </WrappNavigationShadow>
@@ -149,7 +150,7 @@ const Navigation = () => {
 
 const WrappNavigationShadow = styled(NavigationBasicStyle)`
   ${({theme, addShadow})=>`
-    background: ${addShadow ? theme.colors.colorPrimary : 'transparent'};
+    background: ${addShadow ? theme.colors.colorSmallMenu : 'transparent'};
     box-shadow: ${addShadow ? theme.shadows.shadowGrey : 'none'};
     ${addShadow ? css`top: 0;` : null}
    `};

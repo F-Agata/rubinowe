@@ -66,10 +66,7 @@ const WrappElement = styled.div`
   @media (min-width: 1170px) {
     width: 32%;
   }
-
-  
-  
-`
+ `
 
 const WrappIcon = styled.div`
   width: 50px;

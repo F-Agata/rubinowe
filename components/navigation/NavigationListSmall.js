@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 
-import logo from "../../public/logoWhite.svg";
+import logo from "../../public/logo.svg";
 import iconOpened from '../../public/iconHamburgerMenuOpened.svg'
 
 const NavigationWrapp = styled.div`
@@ -14,20 +14,21 @@ const NavigationWrapp = styled.div`
   z-index: 999;`
 
 const NavigationListWrapp = styled.div`
-  background-color: ${props => props.theme.colors.colorPrimary};
-  box-shadow: ${props => props.theme.shadows.shadowWhite};
+  background-color: ${props => props.theme.colors.colorSmallMenu};
+  box-shadow: ${props => props.theme.shadows.shadowGrey};
   position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 300px;
+  top: 0;
+  left: 0;
+  //transform: translate(-50%, 0);
+  width: 100%;
   display: flex;
   flex-direction: column;
     `
 
 const TopMenu = styled.div`
-  background: ${props => props.theme.gradients.gradientVioletToBlue};
-  border-bottom: 1px solid ${props => props.theme.colors.colorBorder};
+  //background: ${props => props.theme.gradients.gradientPrimary};
+  background-color: #F9F8FF;
+  //border-bottom: 1px solid ${props => props.theme.colors.colorBorder};
   padding: 30px;
   display: flex;
   justify-content: space-between;
@@ -45,13 +46,20 @@ const WrapIcon = styled.div`
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  background: ${props => props.theme.colors.colorPrimary};
-  //border: 1px solid ${props => props.theme.colors.colorSecondary};
+  background-color: ${props => props.theme.colors.colorSmallMenu};
+  border: 1px solid ${props => props.theme.colors.colorSecondary};
   //border: gold 2px solid;
   display: flex;
   justify-content: center;
   align-items: center;
     `
+
+const IconToClosed = styled.img`
+//width: 100%;
+  height: 35px;
+  width: 35px;
+`
+
 
 const ToggleMenuButton = styled.button`
   background: transparent;
@@ -79,9 +87,30 @@ const NavigationLi = styled.li`
   transition: 0.3s;
   //border: orange 2px solid;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  ::before {
+    content: "";
+    position: absolute;
+    border-radius: 15px;
+    width: 100%;
+    height: 10px;
+    border-radius: ;
+    //z-index: -1;
+    background-color: ${props => props.theme.colors.colorSecondary};
+    bottom: -10px;
+    left: 0;
+    transition: 0.3s;
+    }
   :hover a {
     color:  ${props => props.theme.colors.colorSecondary};
-  }`
+  }
+  :hover {
+    ::before {
+      bottom: -9px;
+    }
+  }
+`
 
 const NavigationLink = styled.a`
   text-decoration: none;
@@ -92,14 +121,12 @@ const NavigationLink = styled.a`
   line-height: 100%;
   transition: 0.3s;
   letter-spacing: 2px;
-  transition: 0.3s;`
-
-const BottomMenu = styled.div`
-  background: ${props => props.theme.gradients.gradientVioletToBlue};
-  width: 100%;
-  height: 20px;
-   //border: yellow 2px solid;
+  transition: 0.3s;
+  :hover {
+    color: ${props => props.theme.colors.colorSecondary};
+  }
 `
+
 
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
 
@@ -118,7 +145,7 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                     </WrappLogo>
                     <WrapIcon>
                         <ToggleMenuButton onClick={changeMenu}>
-                            <img src={iconOpened.src} alt={"zamknij menu"}/>
+                            <IconToClosed src={iconOpened.src} alt={"zamknij menu"}/>
                         </ToggleMenuButton>
                     </WrapIcon>
                 </TopMenu>
@@ -127,8 +154,6 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                         {menuItem}
                     </NavigationUl>
                 </NavigationNav>
-                <BottomMenu>
-                </BottomMenu>
             </NavigationListWrapp>
         </NavigationWrapp>
     )

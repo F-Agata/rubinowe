@@ -5,15 +5,10 @@ export default {
         colorText: '#595E64',
         colorTitle: '#3B3E43',
         colorTitleVerySmall: '#00A077',
-        colorBlue: "#35D3FF",
-        colorViolet: "#A963FB",
-        colorGray: '#ECF0F3',
+        colorGradientFirst: "#35D3FF",
+        colorGradientSecond: "#A963FB",
+        colorSmallMenu: '#F9F8FF',
         colorBody: "#878e99",
-        colorGraylighten: "#c4cfde",
-        colorGrayMid: "#878787",
-        colorGrayLight: "#E4E6EA",
-        colorGrayLighter: "#CED0D4",
-        colorGrayLightest: "#F0F2F5",
         colorBorder: "#E6E6E6",
     },
     backgrounds: {
@@ -30,7 +25,7 @@ export default {
     gradients: {
         gradientBox: 'linear-gradient(145deg, #e2e8ec, #ffffff)',
         gradientHover: 'linear-gradient(145deg, #ff014f, #d11414)',
-        gradientVioletToBlue: 'linear-gradient(249.78deg, #35D3FF -0.64%, #A963FB 103.6%);'
+        gradientPrimary: 'linear-gradient(249.78deg, #35D3FF -0.64%, #A963FB 103.6%);'
     },
     fonts: {
         fontRegular: `400`,

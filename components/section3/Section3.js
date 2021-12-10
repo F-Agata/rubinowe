@@ -11,7 +11,7 @@ const WrappSection3Background = styled.section`
   max-width: 1800px;
   width: 100%;
   //border: orange 2px solid;
-  background-color: #F9F8FF;
+  background-color: ${props => props.theme.colors.colorSmallMenu};
   display: flex;
   flex-direction: column;
   align-items: center;  

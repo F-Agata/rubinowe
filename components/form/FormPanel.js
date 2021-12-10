@@ -4,7 +4,11 @@ import styled from "styled-components";
 import useForm from "./useForm";
 import validationRules from "./validationRules";
 
-import Btn from "../../styles/Btn";
+import Btn from "../../stylesjs/Btn";
+
+import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
+import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
+import TextSmallDark from "../../stylesjs/TextSmallDark";
 
 const WrappPanelForm = styled.div`
 
@@ -12,7 +16,7 @@ const WrappPanelForm = styled.div`
   max-width: 1800px;
   width: 100%;
   //border: orange 2px solid;
-  background-color: #F9F8FF;
+  background-color: ${props => props.theme.colors.colorSmallMenu};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,28 +26,53 @@ const WrappPanelForm = styled.div`
 const WrappPanel = styled.form`
   //border: chartreuse 2px solid;
   margin: 0px 40px 0 40px;
-  padding: 190px 0px 190px 0px;
+  padding: 80px 0px 80px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1170px;
 `
-const FormTitle = styled.h1`
+const FormTitle = styled(TitleOfPagesDark)`
 `
 const WrappOnePartOfForm = styled.div`
+  margin-top: 20px;
+    display: flex;
+  flex-wrap: wrap;
+  //align-items: flex-start;
+  //justify-content: space-around;
 `
 const LableF = styled.label`
+  font-size:  ${props => props.theme.fontSizes.fsTextSmall};
+  font-weight: ${props => props.theme.fonts.fontRegular};
+  color:  ${props => props.theme.colors.colorText};
+  line-height: 24px;
+  
+  width: 40%;
+  
 `
 const InputF = styled.input`
+  font-size:  ${props => props.theme.fontSizes.fsTextSmall};
+  font-weight: ${props => props.theme.fonts.fontRegular};
+  color:  ${props => props.theme.colors.colorText};
+  line-height: 24px;
+  width: 60%;
 `
 const TextAreaF = styled.textarea`
     min-height: 100px;
   min-width: 100px;
+
+  font-size:  ${props => props.theme.fontSizes.fsTextSmall};
+  font-weight: ${props => props.theme.fonts.fontRegular};
+  color:  ${props => props.theme.colors.colorText};
+  line-height: 24px;
+  
+  width: 60%;
 `
 const BtnF = styled(Btn)`
+    margin: 40px 0;
 `
-const ErrorMessage = styled.p`
-color:red;
+const ErrorMessage = styled(TitleVerySmallGreen)`
+width: 100%;
   `
 
 function FormPanel() {
@@ -52,9 +81,7 @@ function FormPanel() {
 
     return (
         <WrappPanelForm>
-            <WrappPanel
-                onSubmit={handleSubmit}
-                noValidate>
+            <WrappPanel onSubmit={handleSubmit} noValidate>
                 <FormTitle>Napisz do nas</FormTitle>
 
                 <WrappOnePartOfForm>
