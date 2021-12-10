@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 
-const Btn = styled.button`
-  height: 60px;
+export const Btn = ({ ...rest }) => <StyledBtn {...rest} />;
+
+const StyledBtn = styled.button`
+  height: 61px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,5 +20,3 @@ const Btn = styled.button`
     color: ${theme.colors.colorSecondary};
   `};
 `;
-
-export default Btn;

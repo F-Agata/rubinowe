@@ -4,7 +4,7 @@ import styled from "styled-components";
 import useForm from "./useForm";
 import validationRules from "./validationRules";
 
-import Btn from "../../stylesjs/Btn";
+import { Btn } from "../../stylesjs/Btn";
 
 import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
 import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
