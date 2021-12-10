@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import backgroundHeader from '../../../public/backgroundHeader.svg'
-import imgHeader from '../../../public/Group 27013.png'
+import backgroundHeader from '../../public/backgroundHeader.svg'
+import imgHeader from '../../public/mainImage.png'
 
-import TextBigWhite from "../../styles/TextBigWhite";
-import Btn from "../../styles/Btn";
+import TextBigWhite from "../../stylesjs/TextBigWhite";
+import Btn from "../../stylesjs/Btn";
 
 const WrappHeaderBackground = styled.header`
   background-color: ${props => props.theme.colors.colorPrimary};;

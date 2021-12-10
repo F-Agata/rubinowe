@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 
 
-import TitleVerySmallGreen from "../../styles/TitleVerySmallGreen";
-import TitleOfPagesDark from "../../styles/TitleOfPagesDark";
-import TextSmallDark from "../../styles/TextSmallDark";
+import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
+import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
+import TextSmallDark from "../../stylesjs/TextSmallDark";
 
 const WrappSection3Background = styled.section`
   min-width: 375px;
@@ -51,7 +51,7 @@ const Section3 = () => {
            <WrappSection3>
                 <TitleSection3VerySmall>mały zielony tutuł</TitleSection3VerySmall>
                 <TitleSection3>Cześć, jestem tytułem sekcji trzeciej</TitleSection3>
-                <TextSection3>Minister zdrowia Adam Niedzielski był we wtorek gościem "Rozmowy Piaseckiego" w TVN24. Odpowiadał na pytania o wprowadzone przez rząd dodatkowe obostrzenia i rozprzestrzeniający się na świecie wariant koronawirusa omikron. Rozmowę relacjonowaliśmy na żywo w tvn24.pl.</TextSection3>
+                <TextSection3>{`Minister zdrowia Adam Niedzielski był we wtorek gościem "Rozmowy Piaseckiego" w TVN24. Odpowiadał na pytania o wprowadzone przez rząd dodatkowe obostrzenia i rozprzestrzeniający się na świecie wariant koronawirusa omikron. Rozmowę relacjonowaliśmy na żywo w tvn24.pl.`}</TextSection3>
             </WrappSection3>
        </WrappSection3Background>
     )

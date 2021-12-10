@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import icon01Section1 from "../../../public/iconSearch.svg"
-import icon02Section1 from "../../../public/icon3User.svg"
-import icon03Section1 from "../../../public/iconChart.svg"
-import icon04Section1 from "../../../public/iconBag2.svg"
-import icon05Section1 from "../../../public/iconGraph.svg"
-import icon06Section1 from "../../../public/iconDiscount.svg"
-import imgHeader from "../../../public/Group 27013.png";
-import TitleOfSmallPart from "../../styles/TitleOfSmallPart";
-import TextSmallDark from "../../styles/TextSmallDark";
+import icon01Section1 from "../../public/iconSearch.svg"
+import icon02Section1 from "../../public/icon3User.svg"
+import icon03Section1 from "../../public/iconChart.svg"
+import icon04Section1 from "../../public/iconBag2.svg"
+import icon05Section1 from "../../public/iconGraph.svg"
+import icon06Section1 from "../../public/iconDiscount.svg"
+import imgHeader from "../../public/Group 27013.png";
+import TitleOfSmallPart from "../../stylesjs/TitleOfSmallPart";
+import TextSmallDark from "../../stylesjs/TextSmallDark";
 
 const section1Elements = [
     {name: 'project01',

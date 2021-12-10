@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import Section1Elements from "./Section1Elements";
 
-import backgroundSection1 from '../../../public/backgroundSection1.svg'
+import backgroundSection1 from '../../public/backgroundSection1.svg'
 
-import TitleOfPagesDark from "../../styles/TitleOfPagesDark";
-import TitleVerySmallGreen from "../../styles/TitleVerySmallGreen";
+import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
+import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
 
 const WrappSection1Background = styled.section`
   min-width: 375px;

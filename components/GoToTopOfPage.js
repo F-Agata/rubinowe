@@ -1,7 +1,7 @@
 import React,  {useState, useEffect } from "react";
 import styled from 'styled-components'
 
-import arrow from "../../public/iconUpArrow.svg"
+import arrow from "../public/iconUpArrow.svg"
 
 const WrappGoToTopOfPage = styled.div`
   width: 50px;

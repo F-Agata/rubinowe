@@ -1,8 +1,8 @@
 import React from "react";
 import styled from 'styled-components'
 
-import logo from "../../../public/logoWhite.svg";
-import iconOpened from '../../../public/iconHamburgerMenuOpened.svg'
+import logo from "../../public/logoWhite.svg";
+import iconOpened from '../../public/iconHamburgerMenuOpened.svg'
 
 const NavigationWrapp = styled.div`
   position: fixed;

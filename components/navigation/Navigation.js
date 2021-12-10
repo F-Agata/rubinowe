@@ -1,12 +1,12 @@
 import React, {useState, useEffect } from 'react'
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useMediaQuery } from 'react-responsive'
 
 import NavigationListSmall from './NavigationListSmall'
 import NavigationListBig from './NavigationListBig'
 
-import logoWhite from '../../../public/logoWhite.svg'
-import iconClosedWhite from '../../../public/iconHamburgerMenuClosedWhite.svg'
+import logo from '../../public/logo.svg'
+import iconClosedWhite from '../../public/iconHamburgerMenuClosedWhite.svg'
 
 const menuItems = [
     {name: "Hello",
@@ -43,16 +43,25 @@ const WrappNavigation = styled.div`
   }`
 
 const WrappLogo = styled.div`
-  
+  ${({ addShadow })=>`
+    ${ addShadow ? css`
+      img {
+          margin-top: -15px;
+          height: 60px;
+      }
+    ` : css`
+      img {
+        margin-top: -20px;
+        height: 80px;
+      }
+    `}
+  `};
   height: 60px;
   margin-left: 30px;
   padding-top: 10px;
   text-align: left;
   display: flex;
   align-items: center;
-  img {
-    height: 40px;
-  }
   `
 
 const Logo = styled.img`
@@ -117,8 +126,8 @@ const Navigation = () => {
     return (
         <WrappNavigationShadow addShadow={addShadow}>
             <WrappNavigation>
-                <WrappLogo>
-                    <Logo src={logoWhite.src} alt={"logo"}/>
+                <WrappLogo addShadow={addShadow}>
+                    <Logo src={logo.src} alt={"logo"}/>
                 </WrappLogo>
                 { modificationMenuSize ? null :
                     <WrapIcon>
@@ -129,9 +138,9 @@ const Navigation = () => {
                 }
                 { isOpen && !modificationMenuSize ?
                     <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} /> : null}
-                { modificationMenuSize &&
-                <NavigationListBig menuItems={menuItems} />
-                }
+                {/*{ modificationMenuSize &&*/}
+                <NavigationListBig menuItems={menuItems} addShadow={addShadow} />
+                {/*}*/}
 
             </WrappNavigation>
         </WrappNavigationShadow>
@@ -141,7 +150,8 @@ const Navigation = () => {
 const WrappNavigationShadow = styled(NavigationBasicStyle)`
   ${({theme, addShadow})=>`
     background: ${addShadow ? theme.colors.colorPrimary : 'transparent'};
-    box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
+    box-shadow: ${addShadow ? theme.shadows.shadowGrey : 'none'};
+    ${addShadow ? css`top: 0;` : null}
    `};
 `
 

@@ -2,19 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import styled, {ThemeProvider} from "styled-components";
-import theme from "./styles/theme";
-import GlobalStyle from "./styles/GlobalStyle";
+import theme from "../stylesjs/theme";
+import GlobalStyle from "../stylesjs/GlobalStyle";
 
-import GoToTopOfPage from "./components/GoToTopOfPage";
-import Header from "./components/header/Header";
-import Navigation from "./components/navigation/Navigation";
-import Section1 from "./components/section1/Section1";
-import Section2 from "./components/section2/Section2";
-import Section3 from "./components/section3/Section3";
-import Section4 from "./components/section4/Section4";
-import Footer from "./components/footer/Footer";
-import Form from "./components/form/Form";
-
+import GoToTopOfPage from "../components/GoToTopOfPage";
+import Header from "../components/header/Header";
+import Navigation from "../components/navigation/Navigation";
+import Section1 from "../components/section1/Section1";
+import Section2 from "../components/section2/Section2";
+import Section3 from "../components/section3/Section3";
+import Section4 from "../components/section4/Section4";
+import Footer from "../components/footer/Footer";
+import Form from "../components/form/Form";
 
 const AppWrapp = styled.div`
   //border: orange 2px solid;

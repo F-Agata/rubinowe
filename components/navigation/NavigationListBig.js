@@ -1,6 +1,6 @@
 import React from "react";
-import styled from 'styled-components'
-import Btn from "../../styles/Btn";
+import styled, { css } from 'styled-components'
+import Btn from "../../stylesjs/Btn";
 
 
 const NavigationWrapp = styled.div`
@@ -40,26 +40,24 @@ const NavigationLi = styled.li`
   }`
 
 const NavigationLink = styled.a`
+  ${({ addShadow, theme })=>css`
+    color: ${ addShadow ? theme.colors.colorTitle : theme.colors.colorPrimary};
+  font-size: ${theme.fontSizes.fsTextSmall};
+  font-weight: ${theme.fonts.fontMedium};
+    :active {
+    color:  ${theme.colors.colorPrimary}}
+  `};
   text-decoration: none;
   height: 60px;
-  color: ${props => props.theme.colors.colorPrimary};
-  font-size: ${props => props.theme.fontSizes.fsTextSmall};
-  font-weight: ${props => props.theme.fonts.fontMedium};
   line-height: 100%;
   transition: 0.3s;
-  :active {
-    color:  ${props => props.theme.colors.colorPrimary}}
 `
 
-const BtnNavigation = styled(Btn)`
-  
-  `
-
-const NavigationMainListBig = ({ menuItems }) => {
+const NavigationMainListBig = ({ menuItems, addShadow }) => {
 
     const menuItem = menuItems.map( (item) => (
         <NavigationLi key={item.id}>
-            <NavigationLink href={"#"}>{item.name}</NavigationLink>
+            <NavigationLink href={"#"} addShadow={addShadow}>{item.name}</NavigationLink>
         </NavigationLi>
     ));
 
@@ -70,7 +68,7 @@ const NavigationMainListBig = ({ menuItems }) => {
                     {menuItem}
                 </NavigationUl>
             </NavigatioNav>
-            <BtnNavigation>kup teraz 2</BtnNavigation>
+            <Btn>kup teraz 2</Btn>
         </NavigationWrapp>
     )
 }
