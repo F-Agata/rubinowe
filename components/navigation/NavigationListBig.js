@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Btn from "../../stylesjs/Btn";
+import { Btn } from "../../stylesjs/Btn";
 
 const NavigationWrapp = styled.div`
   align-self: center;
@@ -72,12 +72,14 @@ const NavigationMainListBig = ({ menuItems, addShadow }) => {
   ));
 
   return (
-    <NavigationWrapp>
-      <NavigatioNav>
-        <NavigationUl>{menuItem}</NavigationUl>
-      </NavigatioNav>
-      <BtnNB>skontaktuj się </BtnNB>
-    </NavigationWrapp>
+    <>
+      <NavigationWrapp>
+        <NavigatioNav>
+          <NavigationUl>{menuItem}</NavigationUl>
+        </NavigatioNav>
+      </NavigationWrapp>
+      <BtnNB>kup teraz 2</BtnNB>
+    </>
   );
 };
 

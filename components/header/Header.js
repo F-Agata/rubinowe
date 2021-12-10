@@ -5,7 +5,7 @@ import backgroundHeader from "../../public/backgroundHeader.svg";
 import imgHeader from "../../public/mainImage.png";
 
 import TextBigWhite from "../../stylesjs/TextBigWhite";
-import Btn from "../../stylesjs/Btn";
+import { Btn } from "../../stylesjs/Btn";
 
 const WrappHeaderBackground = styled.header`
   background-color: ${(props) => props.theme.colors.colorPrimary};
