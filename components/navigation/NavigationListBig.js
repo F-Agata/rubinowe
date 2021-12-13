@@ -54,11 +54,20 @@ const NavigationLink = styled.a`
   transition: 0.3s;
 `;
 
+const WrappBtnNB = styled.div`
+width: 265px;
+display: flex;
+justify-content: right;
+align-content: center;
+align-items: center;
+margin-right: 30px`
+
 const BtnNB = styled(Btn)`
-  // ${({ addShadow }) => css`
-    //   height: ${addShadow ? "50px" : "60px"};
-    //  padding: ${addShadow ? "10px 40px" : "20px 50px"};
-    //
+  
+  ${({ addShadow }) => css`
+      height: ${addShadow ? "50px" : "60px"};
+     //padding: ${addShadow ? "10px 40px" : "20px 50px"};
+
   `};
 `;
 
@@ -78,7 +87,9 @@ const NavigationMainListBig = ({ menuItems, addShadow }) => {
           <NavigationUl>{menuItem}</NavigationUl>
         </NavigatioNav>
       </NavigationWrapp>
-      <BtnNB>kup teraz 2</BtnNB>
+      <WrappBtnNB>
+        <BtnNB addShadow={addShadow}>kup teraz 2</BtnNB>
+      </WrappBtnNB>
     </>
   );
 };

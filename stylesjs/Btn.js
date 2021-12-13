@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Btn = ({ ...rest }) => <StyledBtn {...rest} />;
-
-const StyledBtn = styled.button`
+export const Btn = styled.button`
   height: 61px;
   display: flex;
   flex-direction: row;

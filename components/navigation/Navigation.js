@@ -25,7 +25,7 @@ const NavigationBasicStyle = styled.aside`
   display: flex;
   justify-content: center;
   z-index: 10;
-  border: 2px solid chartreuse;
+  //border: 2px solid green;
 `;
 
 const WrappNavigationShadow = styled(NavigationBasicStyle)`
@@ -50,7 +50,7 @@ const WrappNavigation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: red 2px solid;
+  //border: red 2px solid;
 `;
 
 const WrappLogo = styled.div`
@@ -72,11 +72,13 @@ const WrappLogo = styled.div`
     }
   `};
   height: 60px;
+  width: 265px;
   margin-left: 30px;
   padding-top: 10px;
   text-align: left;
   display: flex;
   align-items: center;
+  //border: chartreuse 2px solid;
 `;
 
 const Logo = styled.img`
