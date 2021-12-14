@@ -11,5 +11,15 @@ const GlobalStyle = createGlobalStyle`
       body {
         background: white;
       }
+      
+      input {
+        outline: none;
+        box-sizing: border-box !important;
+      }
+      
+      textarea {
+        outline: none;
+        box-sizing: border-box !important;
+      }
 `;
 export default GlobalStyle;

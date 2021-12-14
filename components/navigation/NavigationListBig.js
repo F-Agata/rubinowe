@@ -13,7 +13,6 @@ const NavigationWrapp = styled.div`
 
 const NavigatioNav = styled.nav`
   flex-grow: 1;
-  flex-shrink: 1;
   //border: 2px solid orange;
 `;
 
@@ -63,12 +62,9 @@ align-items: center;
 margin-right: 30px`
 
 const BtnNB = styled(Btn)`
-  
-  ${({ addShadow }) => css`
+    ${({ addShadow }) => css`
       height: ${addShadow ? "50px" : "60px"};
-     //padding: ${addShadow ? "10px 40px" : "20px 50px"};
-
-  `};
+      `};
 `;
 
 const NavigationMainListBig = ({ menuItems, addShadow }) => {
