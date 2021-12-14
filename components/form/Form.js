@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 
 import FormPanel from "./FormPanel";
@@ -19,10 +19,10 @@ const WrappPanelForm = styled.div`
 
 const SuccessMassage = styled(TitleVerySmallGreen)`
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0 80px 0;
     text-align: center;
-  padding-bottom: 80px;
-  `
+  transition: 0.3s ;
+   `
 
 const Form = () => {
 
@@ -30,8 +30,12 @@ const Form = () => {
 
   const submittedForm = () => {
     setIsSubmitted(true)
-      console.log(isSubmited)
      }
+
+  useEffect(() => {
+    const successInfo = setTimeout(() => setIsSubmitted(false), 5000);
+    return () => clearTimeout(successInfo);
+  }, [isSubmited]);
 
   return (
   <WrappPanelForm>
