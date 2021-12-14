@@ -4,37 +4,26 @@ import styled, {css} from "styled-components";
 import useForm from "./useForm";
 import validationRules from "./validationRules";
 
+
 import { Btn } from "../../stylesjs/Btn";
 
 import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
 import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
 
-const WrappPanelForm = styled.div`
-  min-width: 375px;
-  max-width: 1800px;
-  width: 100%;
-  //border: orange 2px solid;
-  background-color: ${(props) => props.theme.colors.colorSmallMenu};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
 const WrappPanel = styled.form`
   width: 100%;
   //border: chartreuse 2px solid;
   margin: 0px 40px 0 40px;
-  padding: 80px 0px 80px 0px;
+  padding: 80px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   max-width: 1170px;
- 
-`;
+ `;
 
 const FormTitle = styled(TitleOfPagesDark)`
-`;
+   `;
 
 const WrappOnePartOfForm = styled.div`
   //border: #0070f3 solid 2px;
@@ -77,7 +66,8 @@ const InputF = styled.input`
   };
   line-height: 24px;
   flex-grow: 1;
-  ::placeholder {
+  border: ${(props) => props.theme.colors.colorTitle} 1px solid;
+::placeholder {
     ${({ theme }) => css`
   font-size: ${theme.fontSizes.fsTextSmall};
   font-weight: ${theme.fonts.fontRegular};
@@ -110,44 +100,50 @@ const InputFCh = styled.input`
     position: absolute;
     width: 24px;
     height: 24px;
-    border: ${(props) => props.theme.colors.colorSecondary} 2px solid;
-    background-color: ${(props) => props.theme.colors.colorSmallMenu};
-      }
+    ${({theme}) => css`
+border: ${theme.colors.colorSecondary} 2px solid;
+background-color: ${theme.colors.colorSmallMenu};
+  `
+    };
+          }
   :checked:before {
     content: "";
     display: block;
     position: absolute;
     width: 24px;
     height: 24px;
-    border: ${(props) => props.theme.colors.colorSecondary} 2px solid;
-    background-color: ${(props) => props.theme.colors.colorSecondary};
     transition: 0.3s ;
-  }
-  :after {
-    content: "";
-    display: block;
-    width: 0px;
-    height: 0px;
-    border: ${(props) => props.theme.colors.colorSmallMenu} solid;
-    border-width: 0 0px 0px 0;
-    ransform: rotate(180deg);
-    position: absolute;
-    top: 0px;
-    left: 50px;
-    transition: 0.3s ;
-  }
-  :checked:after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 18px;
-    border: ${(props) => props.theme.colors.colorSmallMenu} solid;
-    border-width: 0 5px 5px 0;
-    transform: rotate(45deg);
-    position: absolute;
-    top: 0px;
-    left: 8px;
-  }
+${({theme}) => css`
+border: ${theme.colors.colorSecondary} 2px solid;
+background-color: ${theme.colors.colorSecondary};
+  `
+  };
+}
+:after {
+content: "";
+display: block;
+width: 0px;
+height: 0px;
+border: ${(props) => props.theme.colors.colorSmallMenu} solid;
+border-width: 0 0px 0px 0;
+ransform: rotate(180deg);
+position: absolute;
+top: 0px;
+left: 50px;
+transition: 0.3s ;
+}
+:checked:after {
+content: "";
+display: block;
+width: 8px;
+height: 20px;
+border: ${(props) => props.theme.colors.colorSmallMenu} solid;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+position: absolute;
+top: 0px;
+left: 9px;
+}
 `
 
 const TextAreaF = styled.textarea`
@@ -187,16 +183,15 @@ const ErrorMessage = styled(TitleVerySmallGreen)`
   //border: purple 2px solid;
 `;
 
-function FormPanel() {
+function FormPanel({submittedForm}) {
   const { values, errors, handleChange, handleSubmit } =
-    useForm(validationRules);
+    useForm(validationRules, submittedForm);
 
-  useEffect(()=>{console.log(values.accept)},[])
+  // useEffect(()=>{console.log(values.accept)},[])
 
   return (
-    <WrappPanelForm>
       <WrappPanel onSubmit={handleSubmit} noValidate>
-        <FormTitle>Napisz do nas</FormTitle>
+        <FormTitle>napisz do nas</FormTitle>
 
         <WrappOnePartOfForm>
           <LableF htmlFor={"username"}>Podaj imię</LableF>
@@ -250,10 +245,8 @@ function FormPanel() {
           <LableFCh htmlFor={"accept"}>wyraź zgodę na odpowiedz emailem</LableFCh>
           {errors.accept && <ErrorMessage>{errors.accept}</ErrorMessage>}
         </WrappOnePartOfForm>
-
         <BtnF type={"submit"}> Wyślij</BtnF>
       </WrappPanel>
-    </WrappPanelForm>
   );
 }
 export default FormPanel;

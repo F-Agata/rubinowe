@@ -69,7 +69,7 @@ const Header = () => {
         <TextHeader>
           a ja jestem takim textem pisanym 20px czyli TextBigWhite
         </TextHeader>
-        <Btn>Kup teraz</Btn>
+        <Btn>kup teraz</Btn>
         <WrappImgHeader>
           <ImgHeader src={imgHeader.src} alt={"zdjęcie główne"} />
         </WrappImgHeader>

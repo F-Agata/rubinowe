@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const useForm = (validationRules) => {
+const useForm = (validationRules, submittedForm) => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -9,6 +9,7 @@ const useForm = (validationRules) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     const { type, name, value, checked } = e.target;
@@ -29,7 +30,23 @@ const useForm = (validationRules) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validationRules(values));
+    setIsSubmitting(true)
   };
+
+  useEffect(
+      () => {
+        if (Object.keys(errors).length === 0 && isSubmitting) {
+          submittedForm();
+          setValues({
+            username: '',
+            email: '',
+            message: '',
+            agreement: false,
+          })
+          setIsSubmitting(false)
+        }
+      }
+  )
 
   return { values, errors, handleChange, handleSubmit };
 };
