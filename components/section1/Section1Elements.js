@@ -13,40 +13,40 @@ import TextSmallDark from "../../stylesjs/TextSmallDark";
 
 const section1Elements = [
   {
-    name: "project01",
+    name: "First-Class Developers",
     id: "section1project01",
     icon: icon01Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki cookie na komputerach naszych użytkowników. Korzystająna ich używanie. W każdej chwili możesz wyłączyć obsługę plików cookie ustawiając odpowieglądarki internetowej",
+    text: "When you work with Rubinowe or hire developers from us, you strengthen your project with top talent. All our developers have many years of experience.",
   },
   {
-    name: "project02",
-    id: "section1project02",
+    name: "We Build Relationships",
+    id: "project02",
     icon: icon02Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki cookie na komputerach naszych użytkając odpowiedni parametr przeglądarki internetowej",
+    text: "95% of our clients will hire us again. They trust us to deliver just what they need. And we do just that. Always on time, with zero hassle.",
   },
   {
-    name: "project03",
-    id: "section1project03",
+    name: "Cost effective",
+    id: "project03",
     icon: icon03Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki couterach naszych użytkowników. Korzystając z serwisu, wyrażasz zgodę na ich używanie. W każdej chwili możesz wyłączyć obsługę plików cookie ustawiając odpowiedni parametr przeglądarki internetowej",
+    text: "Our costs are determined by one single factor: Your budget. We adapt to you and stick to the numbers we agree on, from the beginning to the very end.",
   },
   {
-    name: "project04",
+    name: "Boost Your Savings",
     id: "section1project04",
     icon: icon04Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki cookie na komputerożesz wyłączyć obsługę plików cookie ustawiając odpowiedni parametr przeglądarki internetowej",
+    text: "Get in touch with us and we’ll offer you a solution that will not just save you money and improve your processes but actually help you fulfil your business goals.",
   },
   {
-    name: "project05",
+    name: "Reduce Costs",
     id: "section1project05",
     icon: icon05Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki cookie na komputerach naszych użytkowników. Korzystając z serwisu, wyrażasz zgodę na ich używanie. W każdej chwili możesz wyłączyć obsługę plików cookie ustawiając odpowiedni parametr przeglądarki internetowej",
+    text: "Our principle: You only pay for what you need. We reduce your costs (by up to 70%!) by optimising performance and resources.",
   },
   {
-    name: "project06",
+    name: "Receive Guidance",
     id: "section1project06",
     icon: icon06Section1,
-    text: "Aby zapewnić poprawne działanie naszego serwisu, zapisujemy pliki cookie na kompuvnhvnvnterach naszych użytkowników. Korzystając z serwisu, wyrażasz zgodę na ich używanie. W każdej chwili możesz wyłączyć obsługę plików cookie ustawiając odpowiedni parametr przeglądarki internetowej",
+    text: "We offer constant guidance and insights, sharing our knowledge so that you can make the right decision every time.",
   },
 ];
 
@@ -100,7 +100,7 @@ const Section1Elements = () => {
   const section1Element = section1Elements.map((item) => (
     <WrappElement key={item.id}>
       <WrappIcon>
-        <IconSection1 src={imgHeader.src} alt={"zdjęcie główne"} />
+        <IconSection1 src={imgHeader.src} alt={"main photo"} />
       </WrappIcon>
       <TitleElement href={"#"}>{item.name}</TitleElement>
       <Text>{item.text}</Text>

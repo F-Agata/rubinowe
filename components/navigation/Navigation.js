@@ -10,10 +10,10 @@ import iconClosedWhite from "../../public/iconHamburgerMenuClosedWhite.svg";
 import iconClosed from "../../public/iconHamburgerMenuClosed.svg";
 
 const menuItems = [
-  { name: "Hello", id: "menu1" },
-  { name: "O mnie", id: "menu2" },
-  { name: "Projekty", id: "menu3" },
-  { name: "Kontakt", id: "menu4" },
+  { name: "Home", id: "menu1" },
+  { name: "About us", id: "menu2" },
+  { name: "Our works", id: "menu3" },
+  { name: "Contact", id: "menu4" },
 ];
 
 const NavigationBasicStyle = styled.aside`

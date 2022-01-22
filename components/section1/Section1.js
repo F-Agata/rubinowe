@@ -50,8 +50,8 @@ const Section1 = () => {
   return (
     <WrappSection1Background>
       <WrappSection1>
-        <TitleSection1VerySmall>Bardzo malutki tytulik</TitleSection1VerySmall>
-        <TitleSection1>Cześć, jestem tytułem sekcji pierwszej</TitleSection1>
+        <TitleSection1VerySmall>Get the Software You Want</TitleSection1VerySmall>
+        <TitleSection1>Why Rubinowe?</TitleSection1>
         <Section1Elements />
       </WrappSection1>
     </WrappSection1Background>

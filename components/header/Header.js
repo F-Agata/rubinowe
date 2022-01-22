@@ -35,7 +35,7 @@ const TitleHeader = styled.h1`
   font-weight: ${(props) => props.theme.fonts.fontMedium};
   color: ${(props) => props.theme.colors.colorPrimary};
   font-weight: 500;
-  font-size: 68px;
+  font-size: 38px;
   line-height: 120%;
   text-align: center;
 `;
@@ -65,13 +65,13 @@ const Header = () => {
   return (
     <WrappHeaderBackground>
       <WrappHeader>
-        <TitleHeader>Cześć, jestem tytułem</TitleHeader>
+        <TitleHeader>Software Development and Digital Transformation from Conception to Delivery</TitleHeader>
         <TextHeader>
-          a ja jestem takim textem pisanym 20px czyli TextBigWhite
+          Trusted software development: delivered intelligently, designed to unlock growth.
         </TextHeader>
-        <Btn>kup teraz</Btn>
+        <Btn>Contact Us</Btn>
         <WrappImgHeader>
-          <ImgHeader src={imgHeader.src} alt={"zdjęcie główne"} />
+          <ImgHeader src={imgHeader.src} alt={"Main photo"} />
         </WrappImgHeader>
       </WrappHeader>
     </WrappHeaderBackground>
