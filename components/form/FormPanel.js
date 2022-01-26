@@ -174,6 +174,7 @@ const TextAreaF = styled.textarea`
 
 const BtnF = styled(Btn)`
   margin: 40px 0;
+  cursor: pointer;
 `;
 
 const ErrorMessage = styled(TitleVerySmallGreen)`
@@ -191,15 +192,15 @@ function FormPanel({submittedForm}) {
 
   return (
       <WrappPanel onSubmit={handleSubmit} noValidate>
-        <FormTitle>napisz do nas</FormTitle>
+        <FormTitle>Send us message</FormTitle>
 
         <WrappOnePartOfForm>
-          <LableF htmlFor={"username"}>Podaj imię</LableF>
+          <LableF htmlFor={"username"}>Name</LableF>
           <InputF
             type={"text"}
             id={"username"}
             name={"username"}
-            placeholder={"podaj imię"}
+            placeholder={"write your name..."}
             value={values.username}
             onChange={handleChange}
           />
@@ -207,12 +208,12 @@ function FormPanel({submittedForm}) {
         </WrappOnePartOfForm>
 
         <WrappOnePartOfForm>
-          <LableF htmlFor={"email"}>Podaj email</LableF>
+          <LableF htmlFor={"email"}>E-mail</LableF>
           <InputF
             type={"email"}
             id={"email"}
             name={"email"}
-            placeholder={"podaj email"}
+            placeholder={"write your valid e-mail..."}
             value={values.email}
             onChange={handleChange}
           />
@@ -220,12 +221,12 @@ function FormPanel({submittedForm}) {
         </WrappOnePartOfForm>
 
         <WrappOnePartOfForm>
-          <LableF htmlFor={"message"}>Napisz pytanie</LableF>
+          <LableF htmlFor={"message"}>Message</LableF>
           <TextAreaF
             type={"text"}
             id={"message"}
             name={"message"}
-            placeholder={"napisz wiadomość..."}
+            placeholder={"write your message..."}
             value={values.message}
             onChange={handleChange}
           />
@@ -242,10 +243,10 @@ function FormPanel({submittedForm}) {
             onChange={handleChange}
            />
           </WrappInputCheckbox>
-          <LableFCh htmlFor={"accept"}>wyraź zgodę na odpowiedz emailem</LableFCh>
+          <LableFCh htmlFor={"accept"}>I agree to the use of my contact details to send mi response.</LableFCh>
           {errors.accept && <ErrorMessage>{errors.accept}</ErrorMessage>}
         </WrappOnePartOfForm>
-        <BtnF type={"submit"}> Wyślij</BtnF>
+        <BtnF type={"submit"}>Send</BtnF>
       </WrappPanel>
   );
 }

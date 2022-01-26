@@ -31,6 +31,23 @@ const useForm = (validationRules, submittedForm) => {
     e.preventDefault();
     setErrors(validationRules(values));
     setIsSubmitting(true)
+
+    const handleSendForm = async () => {
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          email: values.email,
+          fullname: values.username,
+          subject: "e-mail from: rubinowe@rubinowe.pl",
+          message: values.message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+    }
+
+    handleSendForm();
   };
 
   useEffect(
