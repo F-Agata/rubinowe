@@ -11,8 +11,8 @@ import iconClosed from "../../public/iconHamburgerMenuClosed.svg";
 
 const menuItems = [
   { name: "Home", id: "menu1" },
-  { name: "About us", id: "menu2" },
-  { name: "Our works", id: "menu3" },
+  { name: "Why Rubinowe", id: "menu2" },
+  { name: "About us", id: "menu3" },
   { name: "Contact", id: "menu4" },
 ];
 

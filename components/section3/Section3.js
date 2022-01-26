@@ -46,9 +46,9 @@ const Section3 = () => {
   return (
     <WrappSection3Background>
       <WrappSection3>
-        <TitleSection3VerySmall>mały zielony tutuł</TitleSection3VerySmall>
-        <TitleSection3>Cześć, jestem tytułem sekcji trzeciej</TitleSection3>
-        <TextSection3>{`Minister zdrowia Adam Niedzielski był we wtorek gościem "Rozmowy Piaseckiego" w TVN24. Odpowiadał na pytania o wprowadzone przez rząd dodatkowe obostrzenia i rozprzestrzeniający się na świecie wariant koronawirusa omikron. Rozmowę relacjonowaliśmy na żywo w tvn24.pl.`}</TextSection3>
+        <TitleSection3VerySmall>About us #2</TitleSection3VerySmall>
+        <TitleSection3>Live in our customers’ shoes</TitleSection3>
+        <TextSection3>When a project is delivered successfully, we’ll share that success and take pride in our work. But if there are problems or misunderstandings, we’ll work tirelessly to resolve any issues and see things from your perspective.</TextSection3>
       </WrappSection3>
     </WrappSection3Background>
   );
