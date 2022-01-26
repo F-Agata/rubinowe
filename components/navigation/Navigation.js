@@ -29,16 +29,12 @@ const NavigationBasicStyle = styled.aside`
 `;
 
 const WrappNavigationShadow = styled(NavigationBasicStyle)`
-  ${({ theme, addShadow }) => `
+  ${({ theme, addShadow }) => css`
+    position: ${addShadow ? "fixed" : "relative"};
+    margin-bottom: ${addShadow ? "0" : "-82px"};
     background: ${addShadow ? theme.colors.colorSmallMenu : "transparent"};
     box-shadow: ${addShadow ? theme.shadows.shadowGrey : "none"};
-    ${
-      addShadow
-        ? css`
-            top: 0;
-          `
-        : null
-    }
+    top: ${addShadow ? 0 : "33px"};
    `};
 `;
 
