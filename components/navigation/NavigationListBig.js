@@ -2,6 +2,33 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Btn } from "../../stylesjs/Btn";
 
+
+const NavigationMainListBig = ({ menuItems, addShadow }) => {
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href={`#${item.id}`} addShadow={addShadow}>
+        {item.name}
+      </NavigationLink>
+    </NavigationLi>
+  ));
+
+  return (
+    <>
+      <NavigationWrapp>
+        <NavigatioNav>
+          <NavigationUl>{menuItem}</NavigationUl>
+        </NavigatioNav>
+      </NavigationWrapp>
+      <WrappBtnNB>
+        <BtnNB addShadow={addShadow}>Contact</BtnNB>
+      </WrappBtnNB>
+    </>
+  );
+};
+
+export default NavigationMainListBig;
+
+
 const NavigationWrapp = styled.div`
   align-self: center;
   margin-right: 30px;
@@ -66,28 +93,3 @@ const BtnNB = styled(Btn)`
       height: ${addShadow ? "50px" : "60px"};
       `};
 `;
-
-const NavigationMainListBig = ({ menuItems, addShadow }) => {
-  const menuItem = menuItems.map((item) => (
-    <NavigationLi key={item.id}>
-      <NavigationLink href={"#"} addShadow={addShadow}>
-        {item.name}
-      </NavigationLink>
-    </NavigationLi>
-  ));
-
-  return (
-    <>
-      <NavigationWrapp>
-        <NavigatioNav>
-          <NavigationUl>{menuItem}</NavigationUl>
-        </NavigatioNav>
-      </NavigationWrapp>
-      <WrappBtnNB>
-        <BtnNB addShadow={addShadow}>Contact</BtnNB>
-      </WrappBtnNB>
-    </>
-  );
-};
-
-export default NavigationMainListBig;

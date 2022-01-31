@@ -6,6 +6,29 @@ import imgHeader from "../../public/mainImage.png";
 
 import TextBigWhite from "../../stylesjs/TextBigWhite";
 import { Btn } from "../../stylesjs/Btn";
+import DivToNavigation from "../DivToNavigation"
+
+const Header = () => {
+  return (
+      <>
+        <DivToNavigation id={"Home"}/>
+    <WrappHeaderBackground>
+      <WrappHeader>
+        <TitleHeader>Software Development and Digital Transformation from Conception to Delivery</TitleHeader>
+        <TextHeader>
+          Trusted software development: delivered intelligently, designed to unlock growth.
+        </TextHeader>
+        <Btn>Contact Us</Btn>
+        <WrappImgHeader>
+          <ImgHeader src={imgHeader.src} alt={"Main photo"} />
+        </WrappImgHeader>
+      </WrappHeader>
+    </WrappHeaderBackground>
+        </>
+  );
+};
+
+export default Header;
 
 const WrappHeaderBackground = styled.header`
   background-color: ${(props) => props.theme.colors.colorPrimary};
@@ -60,22 +83,3 @@ const ImgHeader = styled.img`
   width: 100%;
   //border: green solid 2px;
 `;
-
-const Header = () => {
-  return (
-    <WrappHeaderBackground>
-      <WrappHeader>
-        <TitleHeader>Software Development and Digital Transformation from Conception to Delivery</TitleHeader>
-        <TextHeader>
-          Trusted software development: delivered intelligently, designed to unlock growth.
-        </TextHeader>
-        <Btn>Contact Us</Btn>
-        <WrappImgHeader>
-          <ImgHeader src={imgHeader.src} alt={"Main photo"} />
-        </WrappImgHeader>
-      </WrappHeader>
-    </WrappHeaderBackground>
-  );
-};
-
-export default Header;

@@ -50,6 +50,22 @@ const section1Elements = [
   },
 ];
 
+const Section1Elements = () => {
+  const section1Element = section1Elements.map((item) => (
+    <WrappElement key={item.id}>
+      <WrappIcon>
+        <Image src={item.icon} height={80} width={80} />
+      </WrappIcon>
+      <TitleElement href={"#"}>{item.name}</TitleElement>
+      <Text>{item.text}</Text>
+    </WrappElement>
+  ));
+
+  return <WrappSection1Elements>{section1Element}</WrappSection1Elements>;
+};
+
+export default Section1Elements;
+
 const WrappSection1Elements = styled.div`
   display: flex;
   justify-content: space-between;
@@ -90,19 +106,3 @@ const TitleElement = styled(TitleOfSmallPart)`
 `;
 
 const Text = styled(TextSmallDark)``;
-
-const Section1Elements = () => {
-  const section1Element = section1Elements.map((item) => (
-    <WrappElement key={item.id}>
-      <WrappIcon>
-        <Image src={item.icon} height={80} width={80} />
-      </WrappIcon>
-      <TitleElement href={"#"}>{item.name}</TitleElement>
-      <Text>{item.text}</Text>
-    </WrappElement>
-  ));
-
-  return <WrappSection1Elements>{section1Element}</WrappSection1Elements>;
-};
-
-export default Section1Elements;

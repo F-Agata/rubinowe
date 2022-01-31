@@ -5,6 +5,27 @@ import backgroundSection2 from "../../public/backgroundSection2.svg";
 import TitleVerySmallWhite from "../../stylesjs/TitleVerySmallWhite";
 import TitleOfPagesWhite from "../../stylesjs/TitleOfPagesWhite";
 import TextBigWhite from "../../stylesjs/TextBigWhite";
+import DivToNavigation from "../DivToNavigation";
+
+
+
+const Section2 = () => {
+  return (
+      <>
+          <DivToNavigation id={"About us"}/>
+    <WrappSection2Background>
+      <WrappSection2>
+        <TitleSection2VerySmall>About us #1</TitleSection2VerySmall>
+        <TitleSection2>Deliver quality in a timely manner</TitleSection2>
+        <TextSection2>We not only deliver great quality software, but we strive to deliver it in the timescales that align with your expectations. It is as important to us as it is to you that software is delivered properly, on time and on budget.</TextSection2>
+      </WrappSection2>
+    </WrappSection2Background>
+          </>
+
+  );
+};
+
+export default Section2;
 
 const WrappSection2Background = styled.section`
   min-width: 375px;
@@ -43,17 +64,3 @@ const TitleSection2 = styled(TitleOfPagesWhite)`
 const TextSection2 = styled(TextBigWhite)`
   margin-bottom: 30px;
 `;
-
-const Section2 = () => {
-  return (
-    <WrappSection2Background>
-      <WrappSection2>
-        <TitleSection2VerySmall>About us #1</TitleSection2VerySmall>
-        <TitleSection2>Deliver quality in a timely manner</TitleSection2>
-        <TextSection2>We not only deliver great quality software, but we strive to deliver it in the timescales that align with your expectations. It is as important to us as it is to you that software is delivered properly, on time and on budget.</TextSection2>
-      </WrappSection2>
-    </WrappSection2Background>
-  );
-};
-
-export default Section2;

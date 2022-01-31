@@ -4,6 +4,41 @@ import Image from "next/image";
 
 import arrow from "../public/iconUpArrow.svg";
 
+const GoToTopOfPage = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [showArrow, setShowArrow] = useState(false);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const toggleArrow = () => {
+    setScrollY(window.pageYOffset);
+    if (scrollY > 100) {
+      setShowArrow(true);
+    } else setShowArrow(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleArrow);
+    return () => window.removeEventListener("scroll", toggleArrow);
+  }, [scrollY, showArrow]);
+
+  return (
+    <>
+      {showArrow ? (
+        <WrappGoToTopOfPage onClick={scrollTop}>
+          <BackgraundButtonArrow />
+          <WrappArrow>
+            <Image src={arrow.src} alt="do góry" layout="fill" />
+          </WrappArrow>
+        </WrappGoToTopOfPage>
+      ) : null}
+    </>
+  );
+};
+
+export default GoToTopOfPage;
 const WrappGoToTopOfPage = styled.div`
   width: 50px;
   height: 50px;
@@ -46,38 +81,3 @@ const WrappArrow = styled.div`
   z-index: 12;
 `;
 
-const GoToTopOfPage = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [showArrow, setShowArrow] = useState(false);
-
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const toggleArrow = () => {
-    setScrollY(window.pageYOffset);
-    if (scrollY > 100) {
-      setShowArrow(true);
-    } else setShowArrow(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleArrow);
-    return () => window.removeEventListener("scroll", toggleArrow);
-  }, [scrollY, showArrow]);
-
-  return (
-    <>
-      {showArrow ? (
-        <WrappGoToTopOfPage onClick={scrollTop}>
-          <BackgraundButtonArrow />
-          <WrappArrow>
-            <Image src={arrow.src} alt="do góry" layout="fill" />
-          </WrappArrow>
-        </WrappGoToTopOfPage>
-      ) : null}
-    </>
-  );
-};
-
-export default GoToTopOfPage;

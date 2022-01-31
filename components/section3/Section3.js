@@ -4,6 +4,24 @@ import styled from "styled-components";
 import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
 import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
 import TextSmallDark from "../../stylesjs/TextSmallDark";
+import DivToNavigation from "../DivToNavigation";
+
+const Section3 = () => {
+  return (
+
+    <WrappSection3Background>
+      <WrappSection3>
+        <TitleSection3VerySmall>About us #2</TitleSection3VerySmall>
+        <TitleSection3>Live in our customers’ shoes</TitleSection3>
+        <TextSection3>When a project is delivered successfully, we’ll share that success and take pride in our work. But if there are problems or misunderstandings, we’ll work tirelessly to resolve any issues and see things from your perspective.</TextSection3>
+      </WrappSection3>
+    </WrappSection3Background>
+
+  );
+};
+
+export default Section3;
+
 
 const WrappSection3Background = styled.section`
   min-width: 375px;
@@ -42,16 +60,3 @@ const TextSection3 = styled(TextSmallDark)`
   //color: #424A4D;
 `;
 
-const Section3 = () => {
-  return (
-    <WrappSection3Background>
-      <WrappSection3>
-        <TitleSection3VerySmall>About us #2</TitleSection3VerySmall>
-        <TitleSection3>Live in our customers’ shoes</TitleSection3>
-        <TextSection3>When a project is delivered successfully, we’ll share that success and take pride in our work. But if there are problems or misunderstandings, we’ll work tirelessly to resolve any issues and see things from your perspective.</TextSection3>
-      </WrappSection3>
-    </WrappSection3Background>
-  );
-};
-
-export default Section3;

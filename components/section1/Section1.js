@@ -7,6 +7,26 @@ import backgroundSection1 from "../../public/backgroundSection1.svg";
 
 import TitleOfPagesDark from "../../stylesjs/TitleOfPagesDark";
 import TitleVerySmallGreen from "../../stylesjs/TitleVerySmallGreen";
+import DivToNavigation from "../DivToNavigation";
+
+
+
+const Section1 = () => {
+  return (
+      <>
+          <DivToNavigation id={"Why Rubinowe"}/>
+    <WrappSection1Background>
+      <WrappSection1>
+        <TitleSection1VerySmall>Get the Software You Want</TitleSection1VerySmall>
+        <TitleSection1>Why Rubinowe?</TitleSection1>
+        <Section1Elements />
+      </WrappSection1>
+    </WrappSection1Background>
+          </>
+  );
+};
+
+export default Section1;
 
 const WrappSection1Background = styled.section`
   min-width: 375px;
@@ -45,17 +65,3 @@ const TitleSection1 = styled(TitleOfPagesDark)`
   padding-bottom: 30px;
   //border: brown 2px solid;
 `;
-
-const Section1 = () => {
-  return (
-    <WrappSection1Background>
-      <WrappSection1>
-        <TitleSection1VerySmall>Get the Software You Want</TitleSection1VerySmall>
-        <TitleSection1>Why Rubinowe?</TitleSection1>
-        <Section1Elements />
-      </WrappSection1>
-    </WrappSection1Background>
-  );
-};
-
-export default Section1;

@@ -4,6 +4,38 @@ import styled from "styled-components";
 import logo from "../../public/logo.svg";
 import iconOpened from "../../public/iconHamburgerMenuOpened.svg";
 
+
+
+const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href={`#${item.id}`} onClick={changeMenu} >{item.name}</NavigationLink>
+    </NavigationLi>
+  ));
+
+  return (
+    <NavigationWrapp>
+      <NavigationListWrapp>
+        <TopMenu>
+          <WrappLogo>
+            <Logo src={logo.src} alt={"logo"} />
+          </WrappLogo>
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              <IconToClosed src={iconOpened.src} alt={"close menu"} />
+            </ToggleMenuButton>
+          </WrapIcon>
+        </TopMenu>
+        <NavigationNav>
+          <NavigationUl>{menuItem}</NavigationUl>
+        </NavigationNav>
+      </NavigationListWrapp>
+    </NavigationWrapp>
+  );
+};
+
+export default NavigationMainListSmall;
+
 const NavigationWrapp = styled.div`
   position: fixed;
   top: 0px;
@@ -132,33 +164,3 @@ const NavigationLink = styled.a`
     color: ${(props) => props.theme.colors.colorSecondary};
   }
 `;
-
-const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
-  const menuItem = menuItems.map((item) => (
-    <NavigationLi key={item.id}>
-      <NavigationLink href={"#"}>{item.name}</NavigationLink>
-    </NavigationLi>
-  ));
-
-  return (
-    <NavigationWrapp>
-      <NavigationListWrapp>
-        <TopMenu>
-          <WrappLogo>
-            <Logo src={logo.src} alt={"logo"} />
-          </WrappLogo>
-          <WrapIcon>
-            <ToggleMenuButton onClick={changeMenu}>
-              <IconToClosed src={iconOpened.src} alt={"zamknij menu"} />
-            </ToggleMenuButton>
-          </WrapIcon>
-        </TopMenu>
-        <NavigationNav>
-          <NavigationUl>{menuItem}</NavigationUl>
-        </NavigationNav>
-      </NavigationListWrapp>
-    </NavigationWrapp>
-  );
-};
-
-export default NavigationMainListSmall;
