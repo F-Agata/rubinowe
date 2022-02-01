@@ -92,9 +92,11 @@ const WrappElement = styled.div`
 const WrappIcon = styled.div`
   width: 100px;
   height: 100px;
-  box-shadow: 0px 10px 20px rgba(197, 158, 145, 0.1);
   border-radius: 15px;
-  background-color: ${(props) => props.theme.colors.colorTitleVerySmall};
+   //box-shadow: 0px 10px 20px rgba(197, 158, 145, 0.5);
+   //background-color: ${(props) => props.theme.colors.colorTitleVerySmall};
+  //background-color: ${(props) => props.theme.colors.colorPrimary};
+  box-shadow: 0px 20px 50px rgba(59, 62, 67, 0.2);
   margin-bottom: 20px;
   display: flex;
   justify-content: center;

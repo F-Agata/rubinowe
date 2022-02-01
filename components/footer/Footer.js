@@ -1,5 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import TitleVerySmallWhite from "../../stylesjs/TitleVerySmallWhite";
+
+
+const Footer = () => {
+  return (
+    <StyledFooter>
+        <TitleVerySmallWhiteFooter>
+            Rubinowe Sp. z o.o. | 43-100 Tychy | www.rubinowe.pl | Software Development and Digital Transformation
+        </TitleVerySmallWhiteFooter>
+    </StyledFooter>
+  );
+};
+
+export default Footer;
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -8,14 +22,10 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `;
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      Rubinowe Sp. z o.o. | 43-100 Tychy | www.rubinowe.pl | Software Development and Digital Transformation
-    </StyledFooter>
-  );
-};
-
-export default Footer;
+const TitleVerySmallWhiteFooter = styled(TitleVerySmallWhite)`
+  margin: 0px 40px 0 40px;
+  text-align: center;
+`

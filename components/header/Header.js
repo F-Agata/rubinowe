@@ -18,7 +18,9 @@ const Header = () => {
         <TextHeader>
           Trusted software development: delivered intelligently, designed to unlock growth.
         </TextHeader>
-        <Btn>Contact Us</Btn>
+        <BtnNBLink href={`#Contact`}>
+          <Btn>Contact Us</Btn>
+        </BtnNBLink>
         <WrappImgHeader>
           <ImgHeader src={imgHeader.src} alt={"Main photo"} />
         </WrappImgHeader>
@@ -45,12 +47,13 @@ const WrappHeaderBackground = styled.header`
 `;
 
 const WrappHeader = styled.div`
-  //margin: 0px 40px 0 40px;
+  margin: 0px 40px 0 40px;
+  padding-top: 160px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px;
+  
   //border: green solid 2px;
 `;
 
@@ -83,3 +86,8 @@ const ImgHeader = styled.img`
   width: 100%;
   //border: green solid 2px;
 `;
+
+const BtnNBLink=styled.a`
+    display: block;
+  cursor: pointer;
+  `

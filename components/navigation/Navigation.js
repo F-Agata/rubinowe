@@ -57,7 +57,9 @@ const Navigation = () => {
     <WrappNavigationShadow addShadow={addShadow}>
       <WrappNavigation>
         <WrappLogo addShadow={addShadow}>
+          <WrappLogoLink href={`#Home`}>
           <Logo src={logo.src} alt={"logo"} />
+          </WrappLogoLink>
         </WrappLogo>
 
         {!modificationMenuSize && addShadow === true ? (
@@ -149,6 +151,11 @@ const WrappLogo = styled.div`
   align-items: center;
   //border: chartreuse 2px solid;
 `;
+
+const WrappLogoLink = styled.a`
+  display: block;
+  cursor: pointer;
+`
 
 const Logo = styled.img`
   height: 100%;

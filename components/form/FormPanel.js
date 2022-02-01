@@ -81,8 +81,7 @@ export default FormPanel;
 const WrappPanel = styled.form`
   width: 100%;
   //border: chartreuse 2px solid;
-  margin: 0px 40px 0 40px;
-  padding: 80px 0px 0px 0px;
+   padding: 80px 00px 0px 00px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +90,7 @@ const WrappPanel = styled.form`
  `;
 
 const FormTitle = styled(TitleOfPagesDark)`
+  padding: 0px 40px 0 40px;
    `;
 
 const WrappOnePartOfForm = styled.div`
@@ -98,8 +98,13 @@ const WrappOnePartOfForm = styled.div`
   width: 100%;
   max-width: 700px;
   margin-top: 20px;
+  padding: 0 40px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
 `;
 
 const LableF = styled.label`
@@ -111,7 +116,12 @@ const LableF = styled.label`
 };
   line-height: 24px;
   width: 145px;
+  padding: 3px 0px;
   //border: orange 2px solid;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    padding: 3px 3px;
+  }
 `;
 
 const LableFCh = styled.label`
@@ -123,6 +133,7 @@ const LableFCh = styled.label`
 };
   line-height: 24px;
   //border: orange 2px solid;
+  padding: 3px 3px;
   `
 
 const InputF = styled.input`
@@ -151,11 +162,16 @@ const InputF = styled.input`
   `;
 
 const WrappInputCheckbox = styled.div`
+  //
   width: 145px;
   height: 28px;
    //border: orange 2px solid;
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
+  @media (min-width: 700px) {
+    justify-content: start;
+    padding: 3px 0px;
+  }
     `
 
 const InputFCh = styled.input`
@@ -252,7 +268,10 @@ const BtnF = styled(Btn)`
 
 const ErrorMessage = styled(TitleVerySmallGreen)`
   width: 100%;
-  margin-left: 145px;
   padding: 20px 0;
+  text-align: left;
   //border: purple 2px solid;
+  @media (min-width: 700px) {
+    margin-left: 145px;
+  }
 `;

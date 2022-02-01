@@ -13,27 +13,36 @@ const NavigationMainListBig = ({ menuItems, addShadow }) => {
   ));
 
   return (
-    <>
+    <NavigationBigWrapp>
       <NavigationWrapp>
         <NavigatioNav>
           <NavigationUl>{menuItem}</NavigationUl>
         </NavigatioNav>
       </NavigationWrapp>
       <WrappBtnNB>
-        <BtnNB addShadow={addShadow}>Contact</BtnNB>
+          <BtnNBLink href={`#Contact`}>
+              <BtnNB addShadow={addShadow}>Contact</BtnNB>
+          </BtnNBLink>
       </WrappBtnNB>
-    </>
+    </NavigationBigWrapp>
   );
 };
 
 export default NavigationMainListBig;
+
+const NavigationBigWrapp = styled.div`
+  //border: 2px solid yellow;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+`
 
 
 const NavigationWrapp = styled.div`
   align-self: center;
   margin-right: 30px;
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
   //border: 2px solid purple;
   flex-grow: 1;
 `;
@@ -47,13 +56,13 @@ const NavigationUl = styled.ul`
   display: flex;
   height: 62px;
   justify-content: center;
-  //border: 2px saddlebrown solid;
   transition: 0.3s;
   :hover a {
     color:  ${(props) => props.theme.colors.colorText};
 `;
 
 const NavigationLi = styled.li`
+  //border: 2px saddlebrown solid;
   margin-left: 30px;
   list-style: none;
   cursor: pointer;
@@ -81,12 +90,18 @@ const NavigationLink = styled.a`
 `;
 
 const WrappBtnNB = styled.div`
-width: 265px;
+//border: 2px saddlebrown solid;
+//width: 265px;
 display: flex;
 justify-content: right;
 align-content: center;
 align-items: center;
 margin-right: 30px`
+
+const BtnNBLink=styled.a`
+    display: block;
+  cursor: pointer;
+  `
 
 const BtnNB = styled(Btn)`
     ${({ addShadow }) => css`
