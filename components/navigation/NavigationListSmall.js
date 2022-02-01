@@ -17,8 +17,10 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
     <NavigationWrapp>
       <NavigationListWrapp>
         <TopMenu>
-          <WrappLogo>
-            <Logo src={logo.src} alt={"logo"} />
+          <WrappLogo onClick={changeMenu}>
+            <WrappLogoLink href={`#Home`}>
+              <Logo src={logo.src} alt={"logo"} />
+            </WrappLogoLink>
           </WrappLogo>
           <WrapIcon>
             <ToggleMenuButton onClick={changeMenu}>
@@ -52,17 +54,14 @@ const NavigationListWrapp = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  //transform: translate(-50%, 0);
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
 const TopMenu = styled.div`
-  //background: ${(props) => props.theme.gradients.gradientPrimary};
-  background-color: #f9f8ff;
-  //border-bottom: 1px solid ${(props) => props.theme.colors.colorBorder};
-  padding: 30px;
+   background-color: #f9f8ff;
+   padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +70,15 @@ const TopMenu = styled.div`
 const WrappLogo = styled.div`
   height: 45px;
   text-align: left;
+  //border: #0070f3 2px solid;
 `;
+
+const WrappLogoLink = styled.a`
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+`
 
 const Logo = styled.img`
   height: 100%;

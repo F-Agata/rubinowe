@@ -58,7 +58,7 @@ const Navigation = () => {
       <WrappNavigation>
         <WrappLogo addShadow={addShadow}>
           <WrappLogoLink href={`#Home`}>
-          <Logo src={logo.src} alt={"logo"} />
+           <Logo src={logo.src} alt={"logo"} />
           </WrappLogoLink>
         </WrappLogo>
 
