@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useSpring, animated } from 'react-spring';
 
 import backgroundHeader from "../../public/backgroundHeader.svg";
 import imgHeader from "../../public/mainImage.png";
@@ -9,6 +10,14 @@ import { Btn } from "../../stylesjs/Btn";
 import DivToNavigation from "../DivToNavigation"
 
 const Header = () => {
+
+    const [toggleActiveBtn, setToggleActiveBtn] = useState(true)
+    const { spring } = useSpring({
+        from: { spring: 0 },
+        spring: toggleActiveBtn ? 1 : 0,
+        config: { duration: 1000 },
+    })
+
   return (
       <>
         <DivToNavigation id={"Home"}/>
@@ -19,7 +28,17 @@ const Header = () => {
           Trusted software development: delivered intelligently, designed to unlock growth.
         </TextHeader>
         <BtnNBLink href={`#Contact`}>
-          <Btn>Contact Us</Btn>
+          <BtnAnimated
+              onMouseMove={() => setToggleActiveBtn(false)}
+              onMouseLeave={() => setToggleActiveBtn(true)}
+              style={{
+                  opacity: spring.to({range: [0, 1], output: [0.3, 1]}),
+                  scale: spring.to({
+                      range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                      output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                  })
+              }}
+              > Contact Us</BtnAnimated>
         </BtnNBLink>
         <WrappImgHeader>
           <ImgHeader src={imgHeader.src} alt={"Main photo"} />
@@ -91,3 +110,6 @@ const BtnNBLink=styled.a`
     display: block;
   cursor: pointer;
   `
+
+const BtnAnimated = styled(animated(Btn))`
+`
