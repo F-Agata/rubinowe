@@ -24,7 +24,7 @@ const Form = () => {
         <DivToNavigation id={"Contact"}/>
           <WrappPanelForm>
     <FormPanel submittedForm={submittedForm} />
-    {isSubmited && <SuccessMassage> Twoja wiadomość została wysłana. Odpowiemy na nią najszybciej jak to możliwe</SuccessMassage>}
+    {isSubmited && <SuccessMassage>Success! Your message was send! </SuccessMassage>}
   </WrappPanelForm>
         </>
   )
