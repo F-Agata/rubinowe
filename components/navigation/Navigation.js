@@ -19,6 +19,11 @@ const menuItems = [
 
 const Navigation = () => {
   // useEffect(()=>{console.log(iconClosed)},[])
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const [iconMenu, setIconMenu] = useState(false);
@@ -62,7 +67,7 @@ const Navigation = () => {
           </WrappLogoLink>
         </WrappLogo>
 
-        {!modificationMenuSize && addShadow === true ? (
+        {mounted && !modificationMenuSize && addShadow === true ? (
           <WrapIcon>
             <ToggleMenuButton onClick={changeMenu}>
               <img src={iconClosed.src} alt={"menu"} />
@@ -70,7 +75,7 @@ const Navigation = () => {
           </WrapIcon>
         ) : null}
 
-        {!modificationMenuSize && addShadow === false ? (
+        {mounted && !modificationMenuSize && addShadow === false ? (
           <WrapIcon>
             <ToggleMenuButton onClick={changeMenu}>
               <img src={iconClosedWhite.src} alt={"menu"} />
@@ -78,10 +83,10 @@ const Navigation = () => {
           </WrapIcon>
         ) : null}
 
-        {isOpen && !modificationMenuSize ? (
+        {mounted &&isOpen && !modificationMenuSize ? (
           <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} />
         ) : null}
-        {modificationMenuSize && (
+        {mounted && modificationMenuSize && (
           <NavigationListBig menuItems={menuItems} addShadow={addShadow} />
         )}
       </WrappNavigation>
