@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T16:00:00Z",
+  "title": "Design System: Rubinowe",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "White Paper", "canonical": "#fbfbf9", "tonalRamp": ["oklch(15% 0.003 106)", "oklch(27% 0.003 106)", "oklch(39% 0.003 106)", "oklch(51% 0.003 106)", "oklch(63% 0.003 106)", "oklch(75% 0.003 106)", "oklch(87% 0.003 106)", "oklch(98.8% 0.002 106)"] },
+      "ruby": { "role": "primary", "displayName": "Rubinowe Ruby", "canonical": "#e30613", "tonalRamp": ["oklch(15% 0.06 27.5)", "oklch(25% 0.1 27.5)", "oklch(36% 0.15 27.5)", "oklch(47% 0.2 27.5)", "oklch(57.6% 0.233 27.5)", "oklch(70% 0.16 27.5)", "oklch(83% 0.08 27.5)", "oklch(95% 0.02 27.5)"] },
+      "ruby-deep": { "role": "secondary", "displayName": "Under-Layer Ruby", "canonical": "#9e0a16", "tonalRamp": ["oklch(15% 0.06 25)", "oklch(25% 0.1 25)", "oklch(34% 0.14 25)", "oklch(43% 0.17 25)", "oklch(55% 0.17 25)", "oklch(68% 0.12 25)", "oklch(82% 0.06 25)", "oklch(95% 0.015 25)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1a0d10", "tonalRamp": ["oklch(15% 0.02 5)", "oklch(17% 0.02 5)", "oklch(28% 0.02 5)", "oklch(40% 0.02 5)", "oklch(52% 0.02 5)", "oklch(66% 0.015 5)", "oklch(80% 0.01 5)", "oklch(95% 0.005 5)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4b3539", "tonalRamp": ["oklch(15% 0.03 5)", "oklch(25% 0.03 5)", "oklch(35% 0.03 5)", "oklch(46% 0.03 5)", "oklch(58% 0.025 5)", "oklch(70% 0.02 5)", "oklch(83% 0.012 5)", "oklch(95% 0.005 5)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero H1 only, bottom-left of the first viewport." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2s; the contact H2 goes larger as the closing statement." },
+      "title": { "displayName": "Title", "purpose": "H3s, scaled locally per section." },
+      "address": { "displayName": "Address", "purpose": "The email address as the primary action, set in the display face." },
+      "body": { "displayName": "Body", "purpose": "Running text; supporting paragraphs in soft ink at 38 to 44ch." },
+      "lead": { "displayName": "Lead", "purpose": "Hero and services lead paragraphs, soft ink, max 44ch." },
+      "label": { "displayName": "Label", "purpose": "Nav links, language tabs, footer." }
+    },
+    "shadows": [
+      { "name": "paper-top", "value": "drop-shadow(0 7px 7px rgb(90 0 16 / 0.32))", "purpose": "Top papercut layer, falling through its cuts onto the under layer (CSS filter)." },
+      { "name": "paper-under", "value": "drop-shadow(0 3px 3px rgb(90 0 16 / 0.25))", "purpose": "Deep ruby under layer onto the ground (CSS filter)." },
+      { "name": "paper-tab", "value": "0 10px 22px -8px rgb(90 0 16 / 0.35), 0 2px 4px rgb(90 0 16 / 0.18)", "purpose": "Small ruby paper piece on the page: current-language tab." },
+      { "name": "header-strip", "value": "0 8px 14px -10px rgb(90 0 16 / 0.28)", "purpose": "Sticky nav strip casting along its lower edge." },
+      { "name": "contact-sheet", "value": "drop-shadow(0 -6px 10px rgb(90 0 16 / 0.22))", "purpose": "Ruby contact sheet casting upward over the page, following the scalloped edge (CSS filter)." }
+    ],
+    "motion": [
+      { "name": "settle", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only curve. Critically damped, no overshoot: folds, underline growth, arrow nudge." },
+      { "name": "unfold", "value": "1.3s settle; rotateY(-180deg) to 0, brightness 0.82 -> 0.7 -> 1", "purpose": "Fold flap opening. Hero on load with 0.35s delay; others scroll-scrubbed (view timeline, entry 15% to cover 48%) or opened by IntersectionObserver at 35% visibility." },
+      { "name": "underline-grow", "value": "0.4s settle", "purpose": "Nav link hover bar drawn in from the left." },
+      { "name": "link-thicken", "value": "0.3s to 0.35s settle", "purpose": "Email link underline thickening and arrow nudge on hover." },
+      { "name": "reduced-motion", "value": "none", "purpose": "All fold transforms, filters and link transitions removed; paper is simply flat." }
+    ],
+    "breakpoints": [
+      { "name": "footer-stack", "value": "600px" },
+      { "name": "nav-wrap", "value": "760px" },
+      { "name": "single-column", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header link: ink label, ruby bar draws in from the left on hover.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Services</a><a class=\"ds-nav-link\" href=\"#\">How we work</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 32px; padding: 20px 24px; background: #fbfbf9; box-shadow: 0 8px 14px -10px rgb(90 0 16 / 0.28); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-nav-link { color: #1a0d10; font-weight: 600; font-size: 0.9375rem; text-decoration: none; padding-block: 6px; background: linear-gradient(#e30613, #e30613) left bottom / 0 2px no-repeat; transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s; } .ds-nav-link:hover { background-size: 100% 2px; color: #9e0a16; } .ds-nav-link:focus-visible { outline: 3px solid #1a0d10; outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Language Tabs",
+      "kind": "chip",
+      "refersTo": "lang-tab-current",
+      "description": "PL / EN switch; the current language is a punched-out ruby paper tab.",
+      "html": "<ul class=\"ds-lang\"><li><a class=\"ds-lang-tab\" href=\"#\">PL</a></li><li><a class=\"ds-lang-tab ds-lang-tab--current\" href=\"#\" aria-current=\"page\">EN</a></li></ul>",
+      "css": ".ds-lang { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-lang-tab { display: grid; place-items: center; min-width: 40px; height: 36px; padding: 0 8px; border-radius: 2px; color: #1a0d10; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: color 0.2s; } .ds-lang-tab:hover { color: #9e0a16; } .ds-lang-tab--current, .ds-lang-tab--current:hover { background: #e30613; color: #fbfbf9; box-shadow: 0 10px 22px -8px rgb(90 0 16 / 0.35), 0 2px 4px rgb(90 0 16 / 0.18); } .ds-lang-tab:focus-visible { outline: 3px solid #1a0d10; outline-offset: 4px; }"
+    },
+    {
+      "name": "Email Link (primary action)",
+      "kind": "button",
+      "refersTo": "email-link",
+      "description": "The address itself as the primary action, in the display face, underlined, with an arrow.",
+      "html": "<a class=\"ds-mail\" href=\"#\"><span>rubinowe@rubinowe.pl</span><svg class=\"ds-mail-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-mail { display: inline-flex; align-items: center; gap: 0.35em; color: #e30613; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-variation-settings: 'wdth' 88; font-size: 2.25rem; letter-spacing: -0.03em; line-height: 1.1; text-decoration-line: underline; text-decoration-thickness: 0.07em; text-underline-offset: 0.18em; transition: color 0.2s, text-decoration-thickness 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-mail-arrow { flex: none; width: 0.9em; height: 0.9em; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-mail:hover { color: #9e0a16; text-decoration-thickness: 0.12em; } .ds-mail:hover .ds-mail-arrow { transform: translateX(0.2em); } .ds-mail:focus-visible { outline: 3px solid #1a0d10; outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Perforated List",
+      "kind": "card",
+      "refersTo": "perforated-list",
+      "description": "Rows divided by dotted perforation lines; title and soft-ink text side by side.",
+      "html": "<ul class=\"ds-perf\"><li class=\"ds-perf-row\"><h3>Easy collaboration</h3><p>We adapt to your workflow, communicate clearly and integrate smoothly with your team.</p></li><li class=\"ds-perf-row\"><h3>Honest advice</h3><p>We share our perspective openly, including when a simpler solution is the better one.</p></li></ul>",
+      "css": ".ds-perf { margin: 0; padding: 0; list-style: none; background: #fbfbf9; color: #1a0d10; } .ds-perf-row { display: grid; grid-template-columns: 5fr 6fr; gap: 12px 32px; padding-block: 32px; background-image: radial-gradient(circle, rgb(26 13 16 / 0.45) 1.5px, transparent 1.9px); background-size: 11px 4px; background-repeat: repeat-x; } .ds-perf-row:last-child { background-image: radial-gradient(circle, rgb(26 13 16 / 0.45) 1.5px, transparent 1.9px), radial-gradient(circle, rgb(26 13 16 / 0.45) 1.5px, transparent 1.9px); background-position: 0 0, 0 100%; } .ds-perf-row h3 { margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-variation-settings: 'wdth' 88; font-size: 1.75rem; letter-spacing: -0.025em; line-height: 1.05; } .ds-perf-row p { margin: 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 1.125rem; line-height: 1.6; color: #4b3539; max-width: 44ch; }"
+    },
+    {
+      "name": "Contact Sheet",
+      "kind": "custom",
+      "refersTo": "contact-sheet",
+      "description": "Drenched ruby section with a scalloped top edge, a punched-hole row, and an upward cast shadow.",
+      "html": "<div class=\"ds-contact-wrap\"><section class=\"ds-contact\"><h2>Let's talk</h2><p>Have a project in mind? Drop us a line.</p><a class=\"ds-contact-mail\" href=\"#\">rubinowe@rubinowe.pl</a></section></div>",
+      "css": ".ds-contact-wrap { padding-top: 32px; background: #fbfbf9; } .ds-contact { position: relative; display: grid; justify-items: start; gap: 24px; padding: 72px 32px 64px; background-color: #e30613; background-image: radial-gradient(circle 5px, #fbfbf9 96%, transparent 100%); background-size: 44px 12px; background-repeat: repeat-x; background-position: 0 30px; color: #fbfbf9; filter: drop-shadow(0 -6px 10px rgb(90 0 16 / 0.22)); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-contact::before { content: ''; position: absolute; left: 0; right: 0; top: -21px; height: 22px; background: #e30613; -webkit-mask: radial-gradient(circle 22px at 22px 100%, #000 98%, transparent 100%) 0 0 / 44px 100% repeat-x; mask: radial-gradient(circle 22px at 22px 100%, #000 98%, transparent 100%) 0 0 / 44px 100% repeat-x; } .ds-contact h2 { margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-variation-settings: 'wdth' 88; font-size: 4rem; letter-spacing: -0.04em; line-height: 0.98; } .ds-contact p { margin: 0; font-size: 1.25rem; line-height: 1.6; max-width: 40ch; } .ds-contact-mail { color: inherit; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-variation-settings: 'wdth' 88; font-size: 2.5rem; letter-spacing: -0.035em; line-height: 1.05; text-decoration-thickness: 0.06em; text-underline-offset: 0.22em; transition: text-decoration-thickness 0.3s cubic-bezier(0.16, 1, 0.3, 1), text-underline-offset 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-contact-mail:hover { text-decoration-thickness: 0.12em; text-underline-offset: 0.16em; } .ds-contact-mail:focus-visible { outline: 3px solid #fbfbf9; outline-offset: 4px; }"
+    },
+    {
+      "name": "The Fold",
+      "kind": "custom",
+      "refersTo": "fold",
+      "description": "Signature: a mirror-symmetric papercut whose right half unfolds over the fixed left half along the axis, settling flat with no overshoot.",
+      "html": "<div class=\"ds-fold\" aria-hidden=\"true\"><svg class=\"ds-fold-half ds-fold-fixed\" viewBox=\"-100 -100 100 200\"><defs><mask id=\"ds-fl\" maskUnits=\"userSpaceOnUse\" x=\"-100\" y=\"-100\" width=\"200\" height=\"200\"><rect x=\"-100\" y=\"-100\" width=\"200\" height=\"200\" fill=\"#fff\"/><path d=\"M-14,-22 L-34,0 L-14,22\" fill=\"none\" stroke=\"#000\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M14,-22 L34,0 L14,22\" fill=\"none\" stroke=\"#000\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></mask></defs><circle r=\"84\" class=\"ds-under\"/><circle r=\"72\" class=\"ds-top\" mask=\"url(#ds-fl)\"/></svg><svg class=\"ds-fold-half ds-fold-flap\" viewBox=\"0 -100 100 200\"><defs><mask id=\"ds-fr\" maskUnits=\"userSpaceOnUse\" x=\"-100\" y=\"-100\" width=\"200\" height=\"200\"><rect x=\"-100\" y=\"-100\" width=\"200\" height=\"200\" fill=\"#fff\"/><path d=\"M-14,-22 L-34,0 L-14,22\" fill=\"none\" stroke=\"#000\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M14,-22 L34,0 L14,22\" fill=\"none\" stroke=\"#000\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></mask></defs><circle r=\"84\" class=\"ds-under\"/><circle r=\"72\" class=\"ds-top\" mask=\"url(#ds-fr)\"/></svg></div>",
+      "css": ".ds-fold { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: 1 / 1; width: 220px; perspective: 2800px; background: #fbfbf9; } .ds-fold-half { display: block; width: 100%; height: 100%; overflow: visible; } .ds-fold-fixed { clip-path: inset(-25% -0.5px -25% -25%); } .ds-fold-flap { transform-origin: 0 50%; clip-path: inset(-25% -25% -25% -0.5px); animation: ds-unfold 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; } .ds-fold:hover .ds-fold-flap { animation: none; } .ds-top { fill: #e30613; filter: drop-shadow(0 7px 7px rgb(90 0 16 / 0.32)); } .ds-under { fill: #9e0a16; filter: drop-shadow(0 3px 3px rgb(90 0 16 / 0.25)); } @keyframes ds-unfold { from { transform: rotateY(-180deg); filter: brightness(0.82); } 50% { filter: brightness(0.7); } to { transform: rotateY(0deg); filter: brightness(1); } } @media (prefers-reduced-motion: reduce) { .ds-fold-flap { animation: none; } }"
+    },
+    {
+      "name": "Footer",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "Solid ink slab with legal name, tagline and the email pushed right.",
+      "html": "<footer class=\"ds-footer\"><span>© 2026 Rubinowe Sp. z o.o.</span><span>Software House</span><a href=\"#\">rubinowe@rubinowe.pl</a></footer>",
+      "css": ".ds-footer { display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 32px; background: #1a0d10; color: #fbfbf9; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.9375rem; } .ds-footer a { margin-left: auto; color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-footer a:hover { text-decoration-thickness: 0.14em; } .ds-footer a:focus-visible { outline: 3px solid #fbfbf9; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Folded Wycinanka",
+    "overview": "Rubinowe is one sheet of ruby paper, folded once along a vertical axis and cut with precision. Every ornament is a mirror-symmetric papercut (rosette, tree, ladder, birds, lattice) whose cuts are drawn from code glyphs: braces, angle brackets, square brackets. The cut is exact and geometric, never folk-soft. The page around the art is plain white paper with heavy, tight grotesque headlines and a calm workhorse body; the papercut carries the voice, the type carries the facts.\n\nDepth is physical, not tonal. Paper lies on paper and casts a real shadow, cuts are real holes the shadow falls through, and state is shown by form (folded, cut, flat) rather than by a new hue. The signature behaviour is the fold: each papercut opens from its folded right half along the mirror axis, on load for the hero and driven by scroll for every other section, settling flat with critical damping and no overshoot. The last section is the same sheet reversed: drenched ruby with a scalloped top edge and a white-paper rosette cut into it.\n\nDensity is low and the rhythm generous. Sections breathe on a fluid section unit, copy columns stay narrow (34 to 44ch), and composition is asymmetric except where the fold demands mirroring.",
+    "keyCharacteristics": [
+      "Four flat inks only: paper, ruby, deep ruby, ink (plus a soft ink for secondary text).",
+      "Papercut art built from code glyphs, mirror-symmetric about x = 0, folded at the axis.",
+      "Real cast shadows between paper layers; no tonal shading, no gradients in the art.",
+      "Display set heavy and narrow (Bricolage Grotesque 800, wdth 88, negative tracking).",
+      "Dotted perforation lines are the only rules.",
+      "One motion curve, critically damped: cubic-bezier(0.16, 1, 0.3, 1)."
+    ],
+    "rules": [
+      { "name": "The Two Papers Rule", "body": "Art uses exactly two paper colours per surface: a top layer and an under layer (ruby over deep ruby on white; white paper over deep ruby on the contact sheet). No midtones, no tints, no gradients inside a papercut.", "section": "colors" },
+      { "name": "The Reversal Rule", "body": "On a ruby ground the sheet reverses: the top paper becomes white and the under layer stays deep ruby. Achieve it by setting `--cut-top` and `--cut-under` on the art container, never by redrawing the motif.", "section": "colors" },
+      { "name": "The Hard-Stop Rule", "body": "CSS gradient functions appear only as hard-edged devices: punched holes, perforation dots, the solid underline bar. A gradient that blends one colour into another is outside the world.", "section": "colors" },
+      { "name": "The Cut Letter Rule", "body": "Every display-face setting uses weight 700 to 800, `font-variation-settings: \"wdth\" 88`, and negative tracking (-0.025em to -0.04em). Headlines use `text-wrap: balance`, paragraphs `text-wrap: pretty`.", "section": "typography" },
+      { "name": "The Address Is The Button Rule", "body": "The primary action is the email address itself, set in the display face with a thick underline. There are no filled buttons.", "section": "typography" },
+      { "name": "The Real Paper Rule", "body": "A shadow exists only where one paper lies over another. It is soft, warm (rgb 90 0 16), and offset in the direction of the overlap; never a hard offset block, never a glow.", "section": "elevation" },
+      { "name": "The Folding Shade Rule", "body": "While a flap is mid-fold it darkens (brightness 0.82 to 0.7) and returns to 1 when flat. This is transient light on moving paper, not a static midtone.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build every ornament as a mirror-symmetric papercut about x = 0, cut from code glyphs ({ } < > [ ]), with cuts as SVG mask holes.",
+      "Do keep art to two paper layers per surface: top (ruby, or white paper on ruby) and under (deep ruby), switched only via `--cut-top` / `--cut-under`.",
+      "Do cast shadows only where paper overlaps paper, in warm rgb(90 0 16) at 0.18 to 0.35 alpha.",
+      "Do set the display face at 700 to 800, wdth 88, negative tracking.",
+      "Do make the email address the primary action, set in the display face and underlined.",
+      "Do separate list rows with dotted perforation lines (1.5px dots, 11px repeat).",
+      "Do animate with cubic-bezier(0.16, 1, 0.3, 1) only, and leave every fold flat under reduced motion."
+    ],
+    "donts": [
+      "Don't add midtones, tints, or colour-blending gradients to the art or surfaces; gradient functions are allowed only as hard-stop holes, dots, and bars.",
+      "Don't use solid or hairline borders as dividers; perforation is the only rule.",
+      "Don't use overshoot or spring easing on folds; paper settles flat.",
+      "Don't use hard offset block shadows, glows, or neutral grey shadows.",
+      "Don't use filled or pill buttons; actions are underlined text.",
+      "Don't introduce colours beyond paper, ruby, deep ruby, ink, and soft ink.",
+      "Don't let a fold half bleed past its axis; each half is clipped at the fold."
+    ]
+  }
+}
